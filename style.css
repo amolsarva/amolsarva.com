@@ -1,7 +1,7 @@
 #body {
     font-family: Helvetica, Verdana, Arial, sans-serif;
     background: #ECEDE6;
-    background-image: url(http://www.drownout.com/blog/circles2.jpg);
+    background-image: url(circles2.jpg);
     background-repeat: repeat;
     background-size: 100%;
     font-size: 14px;
@@ -118,7 +118,7 @@
     border: 20px solid #FFF;
     padding: 20px;
     height: 255px;
-    background-image: url(http://www.amolsarva.com/amol2019graveS.JPG);
+    background-image: url(amol2019graveS.JPG);
     background-repeat: no-repeat;
     background-size: 100%;
 }
