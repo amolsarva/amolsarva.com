@@ -49,8 +49,8 @@
 }
 
 .box-header {
-    /* background: #fff url() no-repeat 590px 10px; */
-    background: #fff url("https://amolsarva.com/box-header.png") 590px 10px no-repeat;
+    background: #fff  no-repeat 590px 10px; 
+    /* background: #fff url("https://amolsarva.com/box-header.png") 590px 10px no-repeat; */
     padding: 25px 35px;
     padding-bottom: 0px;
 }
@@ -68,7 +68,7 @@
 }
 
 .box-footer {
-    background: #ecede6 url("https://www.drownout.com/css/box-shadow.png") no-repeat;
+    background: #ecede6 url("https://amolsarva.com/box-shadow.png") no-repeat;
     /* height: 30px; */
     /* background: #ecede6 url("https://amolsarva.com/box-shadow.png") no-repeat; */
 }
