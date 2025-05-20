@@ -1,143 +1,149 @@
 body {
-	font-family: Helvetica, Verdana, Arial, sans;
-	background:#ECEDE6;
-         background-image: url(circles2.jpg);
-         background-repeat: repeat;
-		 background-size: 100%;
-	font-size:14px;
-	margin:0px;
-	padding:0px;
+  font-family: Helvetica, Verdana, Arial, sans-serif;
+  background: #ECEDE6;
+  background-image: url(circles2.jpg);
+  background-repeat: repeat;
+  background-size: 100%;
+  font-size: 14px;
+  margin: 0px;
+  padding: 0px;
 }
 
 td {
-	font-family: Helvetica, Verdana, Arial, sans;
+  font-family: Helvetica, Verdana, Arial, sans-serif;
 }
 
 th {
-	font-family: Helvetica, Verdana, Arial, sans;
-}
-h1{
-	margin:0px;
-	
-	padding:0px;
+  font-family: Helvetica, Verdana, Arial, sans-serif;
 }
 
-
-#main{
-
-width:990px;
-	
-}
-#header{
-	margin:40px 0px 30px 50px;	
-}
-#header h1{
-		font-size:24px;
-		text-shadow: 2px 1px 1px #bbb;
+h1 {
+  margin: 0px;
+  padding: 0px;
 }
 
-.box{
-		
-	
-	width:680px;
-	margin:20px 0px 20px 40px;
-	
-		
-}
-.box-header{
-	background:#fff url() no-repeat 590px 10px;
-	
-	padding:25px 35px;
-	padding-bottom:0px;
-}
-.box-header h1{
-	font-size:24px;
-	text-shadow: 2px 1px 1px #ccc;
-}
-.box-content{
-	background:#FFF;
-	min-height:50px;
-	padding:15px 35px;
-	line-height:1.4em;
-}
-.box-footer{
-	//height:30px;
-	//background:#ecede6 url(box-shadow.png) no-repeat;
-	// this is not in use! it WAS in use once but I like the square style
-	
+#main {
+  width: 990px;
 }
 
-.box a{
-	text-decoration:none;
-	border-bottom:1px dotted #000;
-	color:#000;
-}
-	
-	/*
-	* ABOUT
-	*/
-	.about .box-header h1{
-		color:#000; //#7e8ee3;
-	}
-	.about a:hover{
-		color:#7e8ee3;
-		border-bottom-color:#7e8ee3;
-	}
-	/*
-	* CONTACT
-	*/
-	.contact .box-header{
-		background-image:url();	
-	}
-	.contact .box-header h1{
-		color:#000; // #a9bd33;	
-	}
-	.contact a:hover{
-		color:#a9bd33;
-		border-bottom-color:#a9bd33;
-	}
-	/*
-	* BACKGROUND
-	*/
-	.background .box-header{
-		background-image:url();	
-	}
-	.background .box-header h1{
-		color:#000; //#c12a2a;	
-	}
-	.background a:hover{
-		color:#c12a2a;
-		border-bottom-color:#c12a2a;
-	}
-	/*
-	* SIDEBAR
-	*/
-.sidebar{
-	position:absolute;
-	left:750px;
-	width:260px;	
+#header {
+  margin: 40px 0px 30px 50px;
 }
 
-.sidebar-content{
-	background:#FFF;
-	border:20px solid #FFF;
-	padding:20px;
-	height:255px;
-	background-image:url(amol2019graveS.JPG);
-	background-repeat: no-repeat;
-	background-size: 100%;	
+#header h1 {
+  font-size: 24px;
+  text-shadow: 2px 1px 1px #bbb;
 }
+
+.box {
+  width: 680px;
+  margin: 20px 0px 20px 40px;
+}
+
+.box-header {
+  background: #fff url() no-repeat 590px 10px;
+  padding: 25px 35px;
+  padding-bottom: 0px;
+}
+
+.box-header h1 {
+  font-size: 24px;
+  text-shadow: 2px 1px 1px #ccc;
+}
+
+.box-content {
+  background: #FFF;
+  min-height: 50px;
+  padding: 15px 35px;
+  line-height: 1.4em;
+}
+
+.box-footer {
+  /* Previously contained commented out styles, now empty */
+}
+
+.box a {
+  text-decoration: none;
+  border-bottom: 1px dotted #000;
+  color: #000;
+}
+
+/*
+* ABOUT
+*/
+.about .box-header h1 {
+  color: #000;
+}
+
+.about a:hover {
+  color: #7e8ee3;
+  border-bottom-color: #7e8ee3;
+}
+
+/*
+* CONTACT
+*/
+.contact .box-header {
+  background-image: url();
+}
+
+.contact .box-header h1 {
+  color: #000;
+}
+
+.contact a:hover {
+  color: #a9bd33;
+  border-bottom-color: #a9bd33;
+}
+
+/*
+* BACKGROUND
+*/
+.background .box-header {
+  background-image: url();
+}
+
+.background .box-header h1 {
+  color: #000;
+}
+
+.background a:hover {
+  color: #c12a2a;
+  border-bottom-color: #c12a2a;
+}
+
+/*
+* SIDEBAR
+*/
+.sidebar {
+  position: absolute;
+  left: 750px;
+  width: 260px;
+}
+
+.sidebar-content {
+  background: #FFF;
+  border: 20px solid #FFF;
+  padding: 20px;
+  height: 255px;
+  background-image: url(amol2019graveS.JPG);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
 .sidebar .label {
-    padding-bottom: 15px;
+  padding-bottom: 15px;
+  background-color: white;
 }
-.label a{
-	text-decoration:none;
-	border-bottom:1px dotted #000;
-	color:#000;
-	}
 
-.sidebar-link{
-	margin:100px 0px 0px 0px;
+.label a {
+  text-decoration: none;
+  border-bottom: 1px dotted #000;
+  color: #000;
+}
+
+.sidebar-link {
+  margin: 100px 0px 0px 0px;
 }
 
 
