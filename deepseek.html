@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- AMOL SAYS UPDATE THE NGROK LINK WHEN RUNNING ME -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DeepSeek Query</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    pre {
+      background-color: #f5f5f5;
+      padding: 15px;
+      border-radius: 5px;
+      white-space: pre-wrap;
+    }
+    .status {
+      margin: 10px 0;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <h1>Query DeepSeek</h1>
+  <textarea id="prompt" rows="4" cols="50" placeholder="Enter your question"></textarea><br>
+  <button onclick="sendQuery()">Send</button>
+  <div class="status" id="status"></div>
+  <h2>Response:</h2>
+  <pre id="response"></pre>
+  
+  <script>
+    // Helper function to update status
+    function updateStatus(message) {
+      document.getElementById("status").textContent = message;
+    }
+    
+    async function sendQuery() {
+      const prompt = document.getElementById("prompt").value;
+      const responseElement = document.getElementById("response");
+      updateStatus("Sending request...");
+      responseElement.textContent = "Loading...";
+
+      // Update this URL to your current ngrok URL
+      const apiUrl = "https://3932-96-239-72-6.ngrok-free.app/api/generate";
+      
+      // Create XHR request to avoid some CORS issues
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", apiUrl, true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            try {
+              const data = JSON.parse(xhr.responseText);
+              responseElement.textContent = data.response || "No response data";
+              updateStatus("Response received successfully");
+            } catch (e) {
+              responseElement.textContent = "Error parsing response: " + e.message;
+              updateStatus("Error: Failed to parse response");
+            }
+          } else {
+            responseElement.textContent = `Error: Received status ${xhr.status}`;
+            updateStatus(`Request failed with status: ${xhr.status}`);
+            console.error("Full error response:", xhr.responseText);
+          }
+        }
+      };
+      
+      // Prepare the data
+      const data = {
+        "model": "deepseek-r1:1.5b",
+        "prompt": prompt,
+        "stream": false
+      };
+      
+      // Send the request
+      try {
+        xhr.send(JSON.stringify(data));
+      } catch (error) {
+        responseElement.textContent = `Error: ${error.message}`;
+        updateStatus("Failed to send request");
+      }
+    }
+  </script>
+</body>
+</html>
