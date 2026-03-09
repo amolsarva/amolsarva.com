@@ -2,6 +2,10 @@
    GLOBAL
 ========================= */
 
+* {
+	box-sizing: border-box;
+}
+
 body {
 	font-family: Helvetica, Verdana, Arial, sans-serif;
 	background: #ECEDE6;
@@ -33,29 +37,19 @@ h1 {
 	position: relative;
 }
 
-/* Shared width alignment */
-#header,
-.box,
-.sidebar {
-	margin-left: 40px;
-}
-
 /* =========================
-   HEADER STRIPE
+   HEADER
+   EXACT SAME WIDTH AS .box
 ========================= */
 
 #header {
-	width: 680px;                 /* EXACT same width as .box */
-	margin-top: 40px;
-	margin-bottom: 30px;
-	padding: 20px 35px;
-
-	background: rgba(255, 255, 255, 0.85);  /* translucent */
-	backdrop-filter: blur(2px);             /* subtle glass effect */
-
+	width: 680px;
+	margin: 40px 0 30px 40px;
+	padding: 25px 35px;
+	background: rgba(255, 255, 255, 0.84);
 	box-shadow:
-		0 1px 2px rgba(0,0,0,0.08),
-		0 8px 20px rgba(0,0,0,0.05);
+		0 1px 2px rgba(0, 0, 0, 0.08),
+		0 8px 20px rgba(0, 0, 0, 0.05);
 }
 
 #header h1 {
@@ -64,22 +58,20 @@ h1 {
 }
 
 /* =========================
-   CONTENT BOXES
+   MAIN CONTENT BOXES
 ========================= */
 
 .box {
 	width: 680px;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	margin: 20px 0 20px 40px;
+	box-shadow:
+		0 1px 2px rgba(0, 0, 0, 0.08),
+		0 8px 20px rgba(0, 0, 0, 0.05);
 }
 
 .box-header {
-	background: rgba(255,255,255,0.85);
+	background: rgba(255, 255, 255, 0.84);
 	padding: 25px 35px 0 35px;
-
-	box-shadow:
-		0 1px 2px rgba(0,0,0,0.08),
-		0 8px 20px rgba(0,0,0,0.05);
 }
 
 .box-header h1 {
@@ -88,24 +80,26 @@ h1 {
 }
 
 .box-content {
-	background: rgba(255,255,255,0.85);
+	background: rgba(255, 255, 255, 0.84);
 	min-height: 50px;
 	padding: 15px 35px;
 	line-height: 1.4em;
-
-	box-shadow:
-		0 1px 2px rgba(0,0,0,0.08),
-		0 8px 20px rgba(0,0,0,0.05);
 }
 
-/* =========================
-   LINKS
-========================= */
+.box-footer {
+	/* not in use */
+}
 
-.box a,
-.label a {
+.box a {
 	text-decoration: none;
 	border-bottom: 1px dotted #000;
+	color: #000;
+}
+
+/*
+ * ABOUT
+ */
+.about .box-header h1 {
 	color: #000;
 }
 
@@ -114,9 +108,31 @@ h1 {
 	border-bottom-color: #7e8ee3;
 }
 
+/*
+ * CONTACT
+ */
+.contact .box-header {
+	background-image: url();
+}
+
+.contact .box-header h1 {
+	color: #000;
+}
+
 .contact a:hover {
 	color: #a9bd33;
 	border-bottom-color: #a9bd33;
+}
+
+/*
+ * BACKGROUND
+ */
+.background .box-header {
+	background-image: url();
+}
+
+.background .box-header h1 {
+	color: #000;
 }
 
 .background a:hover {
@@ -131,31 +147,40 @@ h1 {
 .sidebar {
 	position: absolute;
 	left: 750px;
+	top: 0;
 	width: 260px;
 }
 
 .sidebar-content {
-	background: rgba(255,255,255,0.85);
-	border: 20px solid rgba(255,255,255,0.85);
+	background: rgba(255, 255, 255, 0.84);
+	border: 20px solid rgba(255, 255, 255, 0.84);
 	padding: 20px;
 	height: 255px;
-
 	background-image: url(../amol2019graveS.JPG);
 	background-repeat: no-repeat;
 	background-size: 100%;
-
+	background-position: center top;
 	box-shadow:
-		0 1px 2px rgba(0,0,0,0.08),
-		0 8px 20px rgba(0,0,0,0.05);
+		0 1px 2px rgba(0, 0, 0, 0.08),
+		0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar .label {
+	padding-bottom: 15px;
 }
 
 .label {
-	background: rgba(255,255,255,0.85);
+	background: rgba(255, 255, 255, 0.84);
 	padding: 12px 20px 15px 20px;
-
 	box-shadow:
-		0 1px 2px rgba(0,0,0,0.08),
-		0 8px 20px rgba(0,0,0,0.05);
+		0 1px 2px rgba(0, 0, 0, 0.08),
+		0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.label a {
+	text-decoration: none;
+	border-bottom: 1px dotted #000;
+	color: #000;
 }
 
 .sidebar-link {
