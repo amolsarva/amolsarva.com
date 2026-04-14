@@ -370,6 +370,7 @@ p {
 
 .card-grid--columns {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  align-items: stretch;
 }
 
 .card-grid--currently {
@@ -396,8 +397,14 @@ p {
   padding: 1.5rem;
   border-radius: var(--radius-medium);
   box-shadow: 0 10px 18px rgba(15, 23, 42, 0.06);
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
+  height: 100%;
+}
+
+.stack-card--center {
+  justify-content: center;
 }
 
 .stack-card ul {
