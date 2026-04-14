@@ -271,10 +271,17 @@ p {
 }
 
 .hero__portrait {
+  width: min(100%, 320px);
   max-width: 320px;
   justify-self: start;
   display: grid;
   gap: 0.5rem;
+  margin: 0;
+}
+
+.hero__portrait img {
+  width: 100%;
+  height: auto;
 }
 
 .hero__portrait figcaption {
