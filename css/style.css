@@ -18,8 +18,8 @@
   --radius-small: 12px;
   --line-height-base: 1.65;
   --line-height-tight: 1.25;
-  --font-heading: 'Fraunces', 'Times New Roman', serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --transition-base: 160ms ease;
 }
 
@@ -588,6 +588,10 @@ p {
 
 .site-footer a {
   color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-secondary h3:not(:first-child) {
+  margin-top: 1.75rem;
 }
 
 .footer-links {
