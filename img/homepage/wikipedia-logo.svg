@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 225" role="img" aria-labelledby="title desc">
+  <title id="title">Wikipedia logo</title>
+  <desc id="desc">A simple Wikipedia-inspired globe mark with wordmark.</desc>
+  <rect width="400" height="225" rx="20" fill="#ffffff"/>
+  <g fill="none" stroke="#202122" stroke-width="3">
+    <circle cx="200" cy="86" r="43"/>
+    <path d="M157 86h86M200 43v86M170 58c20 12 40 12 60 0M170 114c20-12 40-12 60 0"/>
+    <path d="M188 45c-16 26-16 56 0 82M212 45c16 26 16 56 0 82"/>
+  </g>
+  <text x="200" y="158" text-anchor="middle" fill="#202122" font-family="Georgia, 'Times New Roman', serif" font-size="31">Wikipedia</text>
+  <text x="200" y="181" text-anchor="middle" fill="#54595d" font-family="Helvetica, Arial, sans-serif" font-size="15">The Free Encyclopedia</text>
+</svg>
