@@ -589,6 +589,28 @@ p {
   padding: 1.5rem;
 }
 
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.85rem;
+  margin-top: 1.35rem;
+}
+
+.photo-gallery figure {
+  margin: 0;
+  min-height: 0;
+}
+
+.photo-gallery img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius-small);
+  box-shadow: 0 14px 26px rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.7);
+}
+
 .media-link {
   display: flex;
   align-items: center;
