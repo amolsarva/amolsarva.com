@@ -423,16 +423,6 @@ p {
   color: var(--color-text-secondary);
 }
 
-.card--feature-link {
-  color: inherit;
-  text-decoration: none;
-}
-
-.card--feature-link:hover,
-.card--feature-link:focus {
-  text-decoration: none;
-}
-
 .card-grid--nav {
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.2rem;
