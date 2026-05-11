@@ -29,7 +29,6 @@
             <li><a href="#podcasts">Conversations</a></li>
             <li><a href="#books">Books &amp; Essays</a></li>
             <li><a href="#adventures">Adventures</a></li>
-            <li><a href="/scripts">Scripts</a></li>
           </ul>
         </nav>
       </div>
@@ -83,10 +82,6 @@
             <a class="card card--nav" href="#books">
               <h3>Books &amp; Essays</h3>
               <p>Longer-form work, guides, and archives worth revisiting.</p>
-            </a>
-            <a class="card card--nav" href="/scripts">
-              <h3>Mac Scripts</h3>
-              <p>Shell scripts and Python tools for everyday Mac tasks — all open source.</p>
             </a>
           </div>
         </div>
@@ -277,42 +272,33 @@
         </div>
       </section>
 
-      <section class="section section--data section--layered" id="mac-scripts" aria-labelledby="scripts-title">
-        <div class="container">
-          <div class="section-header">
-            <h2 id="scripts-title" class="section-title">Mac Scripts</h2>
-            <p class="section-subtitle">A growing collection of shell scripts and Python tools for everyday Mac tasks — cleaning iCloud, organizing screenshots, monitoring background processes, and more. All open source.</p>
-          </div>
-          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2rem;">
-            <a href="/scripts" class="button">Browse all scripts →</a>
-            <a href="https://github.com/amolsarva/amols-app-store" target="_blank" rel="noopener" class="button button--ghost">GitHub ↗</a>
-          </div>
-          <div class="card-grid card-grid--nav">
-            <a class="card card--nav" href="/scripts#screenshot-tidy">
-              <h3>📸 screenshot-tidy</h3>
-              <p>Auto-moves screenshots off your Desktop the moment you take them.</p>
-            </a>
-            <a class="card card--nav" href="/scripts#cleanicloud">
-              <h3>☁️ cleanicloud</h3>
-              <p>Find and remove iCloud duplicates and large files interactively.</p>
-            </a>
-            <a class="card card--nav" href="/scripts#mac-migrator">
-              <h3>🖥️ mac-migrator</h3>
-              <p>Bundle your Mac's config into a portable archive for your new machine.</p>
-            </a>
-            <a class="card card--nav" href="/scripts#github-autopush">
-              <h3>🔄 github-autopush</h3>
-              <p>Keep your git repos synced to GitHub automatically in the background.</p>
-            </a>
-          </div>
-        </div>
-      </section>
-
       <section class="section section--currently section--layered" id="adventures" aria-labelledby="adventures-title">
         <div class="container">
           <h2 id="adventures-title" class="section-title">Adventures</h2>
           <p class="section-subtitle">Projects, events, outside links, interviews, and profiles that sit a little outside the standard biography.</p>
           <div class="card-grid card-grid--currently">
+            <article class="card card--soft media-card">
+              <a class="media-card__body" href="/scripts">
+                <svg class="media-card__image media-card__image--contain" viewBox="0 0 400 225" role="img" aria-labelledby="scripts-card-title scripts-card-desc" width="400" height="225">
+                  <title id="scripts-card-title">Mac Scripts</title>
+                  <desc id="scripts-card-desc">A terminal window showing shell script commands on a dark background.</desc>
+                  <rect width="400" height="225" rx="20" fill="#1a1a2e"/>
+                  <rect x="30" y="28" width="340" height="169" rx="10" fill="#0d0d1a"/>
+                  <circle cx="54" cy="50" r="7" fill="#ff5f57"/>
+                  <circle cx="74" cy="50" r="7" fill="#ffbd2e"/>
+                  <circle cx="94" cy="50" r="7" fill="#28c840"/>
+                  <text x="50" y="85" fill="#50fa7b" font-family="monospace" font-size="13">$ ./screenshot-tidy --install</text>
+                  <text x="50" y="107" fill="#8be9fd" font-family="monospace" font-size="13">$ ./cleanicloud.sh</text>
+                  <text x="50" y="129" fill="#f1fa8c" font-family="monospace" font-size="13">$ ./github-autopush-manager.sh</text>
+                  <text x="50" y="151" fill="#bd93f9" font-family="monospace" font-size="13">$ python3 cpu_guard.py</text>
+                  <text x="50" y="176" fill="#50fa7b" font-family="monospace" font-size="13">▌</text>
+                </svg>
+                <h3 class="media-card__title">Amol's App Store — Mac Scripts</h3>
+                <p>I've been making handy little tools that keep my Mac running smoothly. iCloud cleaner, screenshot organizer, auto-GitHub sync, CPU watchdog, and more. All free, all open source. Get&nbsp;'em.</p>
+                <p class="media-card__meta">11 scripts &middot; Open source</p>
+                <span class="media-card__cta">Browse scripts</span>
+              </a>
+            </article>
             <article class="card card--soft media-card">
               <a class="media-card__body" href="/funeralparty/">
                 <svg class="media-card__image media-card__image--contain" viewBox="0 0 400 225" role="img" aria-labelledby="funeral-party-title funeral-party-desc" width="400" height="225">
