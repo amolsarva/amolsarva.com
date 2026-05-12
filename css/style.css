@@ -60,12 +60,41 @@ img {
 
 a {
   color: var(--color-accent);
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
 }
 
 a:hover,
 a:focus {
+  text-decoration-thickness: 0.12em;
+}
+
+.brand,
+.button,
+.card,
+.card--nav,
+.media-card__body,
+.media-card__primary,
+.photo-gallery a,
+.site-nav a,
+.footer-links a {
+  text-decoration: none;
+}
+
+.guide-section a:not(.button)::after,
+.site-footer p a::after,
+.site-footer .footer-links a::after {
+  content: ' 🔗';
+  display: inline-block;
+  font-size: 0.78em;
   text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+.guide-section .photo-gallery a::after {
+  content: none;
 }
 
 a:focus-visible,
