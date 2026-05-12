@@ -623,6 +623,36 @@ p {
   box-shadow: 0 12px 22px rgba(15, 23, 42, 0.16);
 }
 
+.photo-gallery__more a {
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 0.25rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(160, 97, 44, 0.9), rgba(31, 31, 29, 0.92));
+  color: #fff;
+  box-shadow: 0 8px 16px rgba(15, 23, 42, 0.12);
+  text-align: center;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.photo-gallery__more a:hover,
+.photo-gallery__more a:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(15, 23, 42, 0.18);
+}
+
+.photo-gallery__more span {
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.photo-gallery__more small {
+  font-size: 0.75rem;
+  opacity: 0.82;
+}
+
 .media-link {
   display: flex;
   align-items: center;
