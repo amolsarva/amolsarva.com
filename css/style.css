@@ -683,6 +683,58 @@ p {
   background: rgba(255, 255, 255, 0.18);
 }
 
+
+.voltaire-callout {
+  float: right;
+  width: min(100%, 380px);
+  margin: 0 0 1rem 1rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(160, 97, 44, 0.42);
+  border-radius: var(--radius-medium);
+  background: linear-gradient(145deg, rgba(31, 31, 29, 0.96), rgba(78, 59, 47, 0.95));
+  color: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 16px 28px rgba(15, 23, 42, 0.18);
+}
+
+.voltaire-callout__kicker {
+  margin: 0 0 0.35rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 700;
+}
+
+.voltaire-callout h3 {
+  margin: 0;
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  color: #fff;
+}
+
+.voltaire-callout__fr,
+.voltaire-callout__en {
+  margin: 0.6rem 0 0;
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+.voltaire-callout__fr {
+  font-family: "Fraunces", Georgia, serif;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.voltaire-callout__en {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+@media (max-width: 920px) {
+  .voltaire-callout {
+    float: none;
+    width: 100%;
+    margin: 1rem 0;
+  }
+}
+
 .quote-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
