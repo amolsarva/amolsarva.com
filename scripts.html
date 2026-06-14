@@ -472,6 +472,55 @@
       flex: 1;
     }
 
+    .explain {
+      border: 1px solid rgba(99, 207, 195, 0.20);
+      border-radius: 8px;
+      background: rgba(99, 207, 195, 0.055);
+    }
+
+    .explain summary {
+      min-height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 0 11px;
+      color: #e2fbf7;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.82rem;
+      list-style: none;
+    }
+
+    .explain summary::-webkit-details-marker { display: none; }
+
+    .explain summary::after {
+      content: "+";
+      color: var(--teal);
+      font: 700 1rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    .explain[open] summary::after { content: "-"; }
+
+    .explain-body {
+      display: grid;
+      gap: 10px;
+      padding: 0 11px 12px;
+    }
+
+    .explain-item strong {
+      display: block;
+      margin-bottom: 2px;
+      color: #f4f7fb;
+      font-size: 0.76rem;
+    }
+
+    .app-card .explain-item p {
+      color: #aebdcb;
+      font-size: 0.82rem;
+      line-height: 1.42;
+    }
+
     .chips {
       display: flex;
       flex-wrap: wrap;
@@ -659,8 +708,13 @@
         category: "storage",
         tags: ["storage", "icloud", "sqlite", "contacts"],
         color: "linear-gradient(135deg, #1f6feb, #7c3aed)",
-        summary: "Turns Messages chaos into per-person archives with transcript, media, database, and manifest.",
-        story: "For a founder, teacher, and obsessive note-keeper, old conversations are not junk. They are decisions, context, favors, family, and receipts. This gets them out of iCloud purgatory and into folders I can actually reason about.",
+        summary: "Copies Mac Messages into per-person archive folders so conversations are easier to find and back up.",
+        story: "Old conversations are decisions, context, favors, family, and receipts. This makes a readable archive from the Messages database without making the first move be deletion.",
+        details: [
+          ["Where do messages go?", "Into local archive folders on the Mac, organized by person or thread. Each folder can include a transcript, media files, a copy of the source database slice, and a manifest that says what was exported."],
+          ["Does it delete them?", "No. The safe path is copy first, inspect the archive, then decide separately whether to remove anything from Messages or iCloud. The archive is meant to make deletion less scary, not automatic."],
+          ["How do you find them later?", "The folder names and manifest are the index: search by person, phone number, email, date, or file name in Finder or Spotlight instead of scrolling inside Messages."]
+        ],
         path: "imessage-cleanup/imessage_cleanup.sh",
         featured: true
       },
@@ -759,8 +813,13 @@
         category: "storage",
         tags: ["external-drive", "duplicates", "python"],
         color: "linear-gradient(135deg, #b993ff, #62a8ff)",
-        summary: "Scans external drives for duplicates and plans a clean consolidation with checkpoints.",
-        story: "Old drives are archaeological sites. The goal is not just delete duplicates; it is recover the useful record without losing the weird valuable thing.",
+        summary: "Finds duplicate files on external drives, then makes a reviewable plan before anything is removed.",
+        story: "Old drives are archaeological sites. This is for consolidating the useful record, keeping the best copy, and leaving a trail so the original can be found again.",
+        details: [
+          ["After it finds duplicates, then what?", "It groups matching files and proposes a keeper copy. The useful next step is review: confirm the keeper, move extras to a holding folder, and only delete after the drive still looks right."],
+          ["How do you find the file later?", "The consolidation plan becomes a map. It records duplicate paths, the chosen keeper path, and what moved, so you can search the report instead of guessing which drive or folder had the original."],
+          ["Why not just delete everything?", "Duplicates often exist because the original was hard to find. The tool treats that as an organization problem first and a deletion problem second."]
+        ],
         path: "drive-dedup/"
       },
       {
@@ -783,8 +842,13 @@
         category: "contacts",
         tags: ["contacts", "csv", "backup"],
         color: "linear-gradient(135deg, #44d17d, #62a8ff)",
-        summary: "Turns an Apple Contacts .abbu backup into a readable CSV by finding the real database inside.",
-        story: "The network is the work: founders, students, investors, neighbors, builders. Contacts should be inspectable data, not a sealed Apple bundle.",
+        summary: "Turns an Apple Contacts backup into a readable CSV file you can open in Numbers or Excel.",
+        story: "An .abbu file is Apple's Contacts backup bundle. This pulls the contact list out into a normal spreadsheet-style file so the data is inspectable and portable.",
+        details: [
+          ["Where do the contacts come from?", "From an Apple Contacts .abbu backup made on the Mac. If your iPhone syncs contacts to iCloud or your Mac, those contacts can be part of that backup."],
+          ["Where do they go?", "Into a CSV file on the Mac. CSV is just a table: names, phone numbers, emails, companies, and other fields that can be opened in Numbers, Excel, Google Sheets, or imported elsewhere."],
+          ["Does it change the phone?", "No. It reads the backup and writes a separate file. It does not edit, upload, merge, or delete contacts on the phone."]
+        ],
         path: "abbu-to-csv/abbu_to_csv.sh"
       },
       {
@@ -861,9 +925,27 @@
     }
 
     function appMatches(app, query) {
-      const haystack = [app.name, app.slug, app.category, app.summary, app.story || "", ...app.tags].join(" ").toLowerCase();
+      const detailText = (app.details || []).flat().join(" ");
+      const haystack = [app.name, app.slug, app.category, app.summary, app.story || "", detailText, ...app.tags].join(" ").toLowerCase();
       const categoryOk = activeCategory === "all" || app.category === activeCategory || app.tags.includes(activeCategory);
       return categoryOk && haystack.includes(query);
+    }
+
+    function renderDetails(app) {
+      if (!app.details) return "";
+      return `
+        <details class="explain">
+          <summary>How it works</summary>
+          <div class="explain-body">
+            ${app.details.map(([question, answer]) => `
+              <div class="explain-item">
+                <strong>${question}</strong>
+                <p>${answer}</p>
+              </div>
+            `).join("")}
+          </div>
+        </details>
+      `;
     }
 
     function renderApps() {
@@ -882,6 +964,7 @@
           </div>
           <p class="summary">${app.summary}</p>
           <p class="story">${app.story}</p>
+          ${renderDetails(app)}
           <div class="chips">${app.tags.map(tag => `<span class="chip">${tag}</span>`).join("")}</div>
           <div class="card-actions">
             <a class="mini-btn get" href="${getUrl(app)}">Get</a>
