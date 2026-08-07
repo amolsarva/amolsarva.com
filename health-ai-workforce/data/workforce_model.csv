@@ -1,0 +1,12 @@
+job_family,low_headcount,high_headcount,point_headcount,addressable_low,addressable_high,automation_rating,augmentation_rating,representative_tasks,best_ai_wedge,addressable_mid,technical_fte_equivalent,share_pct
+Registered nurses,22000,25000,23000,0.15,0.25,2,5,Bedside care; medication; monitoring; documentation; handoffs,"Documentation, surveillance, handoff and care-plan support",0.2,4600.0,23.0
+Clinical support,16000,20000,18000,0.15,0.3,2,4,Intake; vitals; care assistance; transport; room turnover,"Intake automation, task routing, reminders and workflow orchestration",0.22499999999999998,4049.9999999999995,18.0
+"Admin, scheduling & revenue cycle",13000,18000,16000,0.45,0.65,5,5,Scheduling; registration; coding; claims; authorizations; contact center,"Scheduling, coding, claims, prior auth and contact-center agents",0.55,8800.0,16.0
+Allied health,10000,14000,12000,0.25,0.45,3,5,Imaging; rehabilitation; respiratory care; diagnostics,"Measurement, worklist prioritization, report drafts and care guidance",0.35,4200.0,12.0
+Facilities & operations,8000,12000,11000,0.1,0.25,2,3,Food; security; transport; environmental services; maintenance,"Forecasting, dispatch, routing and preventive maintenance",0.175,1924.9999999999998,11.0
+Employed physicians,5000,7000,6000,0.2,0.35,2,5,Examination; diagnosis; procedures; orders; longitudinal management,"Documentation, chart synthesis, inbox and clinical decision support",0.275,1650.0000000000002,6.0
+Laboratory & pathology,3000,5000,4000,0.35,0.55,4,5,Specimen processing; testing; microscopy; quality assurance,"Workflow automation, quality checks and preliminary interpretation",0.45,1800.0,4.0
+Advanced practice providers,2000,4000,3000,0.2,0.35,2,5,Assessment; diagnosis; treatment; procedures; follow-up,"Documentation, triage and longitudinal-care support",0.275,825.0000000000001,3.0
+"IT, analytics, research & digital",2000,4000,3000,0.35,0.55,3,5,Systems; software; analytics; research operations; cybersecurity,"Coding, analytics, study operations and knowledge support",0.45,1350.0,3.0
+Pharmacy,1500,2500,2000,0.35,0.55,4,5,Verification; dispensing; reconciliation; medication guidance,"Queue prioritization, reconciliation and medication intelligence",0.45,900.0,2.0
+Leadership & corporate,1500,3500,2000,0.35,0.55,4,5,Management; HR; finance; legal; procurement; communications,"Drafting, analysis, recruiting, contracting and policy operations",0.45,900.0,2.0

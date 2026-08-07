@@ -1,0 +1,11 @@
+activity,minutes,releasable_minutes,automation_rating,augmentation_rating,share_pct
+"Patient conversation, examination and decisions",180,0,1,4,37.5
+Documentation,80,40,5,5,16.666666666666664
+"Inbox, messages and results",55,28,4,5,11.458333333333332
+Chart review and pre-visit preparation,45,18,4,5,9.375
+"Orders, prescriptions and referrals",30,15,4,5,6.25
+Care coordination and follow-up,25,8,3,5,5.208333333333334
+"Forms, coding and prior authorization",25,15,5,5,5.208333333333334
+Team communication and huddles,20,4,2,4,4.166666666666666
+"Transitions, searching, waiting and interruptions",10,2,3,3,2.083333333333333
+"Learning, quality and other",10,3,2,4,2.083333333333333
