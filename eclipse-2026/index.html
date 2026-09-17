@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Manacor — Total Solar Eclipse, 12 August 2026 | Amol Sarva</title>
+<meta name="description" content="A total solar eclipse at sunset over Manacor, Mallorca — 12 August 2026. Film, time-lapse, 53 stills with exposure data, and a print-ready poster.">
+<meta property="og:title" content="Manacor — Total Solar Eclipse, 12 August 2026">
+<meta property="og:description" content="Totality at 20:31 CEST, two and a half degrees above the horizon. Film, time-lapse, and 53 frames.">
+<meta property="og:image" content="social.jpg">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--bg:#0a090c;--panel:#131117;--line:#2b2731;--cream:#f3e8d6;--dim:#8e8791;
+      --amber:#e89a3c;--violet:#ce7ac8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--cream);
+  font:16px/1.6 Inter,-apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif}
+a{color:var(--amber)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px 90px}
+.home{display:inline-block;margin:22px 0 0;color:var(--dim);text-decoration:none;
+  font-size:13px;font-weight:700;letter-spacing:.02em}
+.home:hover{color:var(--cream);text-decoration:underline}
+header{padding:30px 0 30px;border-bottom:1px solid var(--line)}
+.kicker{font:600 13px/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.42em;color:var(--amber)}
+h1{font-size:clamp(46px,9.5vw,102px);margin:18px 0 8px;letter-spacing:-.035em;font-weight:800;line-height:.95}
+.sub{color:var(--dim);font-size:18px}
+.lede{max-width:66ch;margin:26px 0 0;color:#cfc8c0;font-size:17.5px}
+h2{font:700 13px/1 ui-monospace,Menlo,monospace;letter-spacing:.3em;text-transform:uppercase;
+   color:var(--dim);margin:58px 0 16px}
+h2 b{color:var(--violet);font-weight:700}
+h2 i{color:var(--amber);font-style:normal}
+video{width:100%;border-radius:10px;border:1px solid var(--line);background:#000;display:block}
+.film{border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.film video{border:0;border-radius:0}
+.cap{color:var(--dim);font-size:14px;margin-top:12px}
+.tlrow{display:grid;grid-template-columns:minmax(0,330px) 1fr;gap:26px;align-items:start}
+@media(max-width:720px){.tlrow{grid-template-columns:1fr}}
+.tlbtns{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.tlstrip{display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:9px}
+.tlstrip div{position:relative;border-radius:7px;overflow:hidden;cursor:pointer;
+  border:2px solid transparent;background:#000}
+.tlstrip div:hover{border-color:var(--violet)}
+.tlstrip img{width:100%;display:block;aspect-ratio:9/16;object-fit:cover}
+.tlstrip span{position:absolute;left:0;right:0;bottom:0;padding:6px;
+  background:linear-gradient(transparent,rgba(0,0,0,.85));font:11px/1 ui-monospace,Menlo,monospace;color:#e6dfe9}
+.stage{position:relative;background:#000;border:1px solid var(--line);border-radius:10px;
+  overflow:hidden;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}
+.stage img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+.stage img.bg{position:absolute;inset:0;width:100%;height:100%;max-width:none;max-height:none;
+  object-fit:cover;filter:blur(46px) brightness(.42);z-index:0}
+.stage img.fg{position:relative;z-index:1}
+.hud{position:absolute;left:0;right:0;bottom:0;z-index:2;display:flex;justify-content:space-between;
+  align-items:flex-end;gap:16px;padding:18px 20px;background:linear-gradient(transparent,rgba(0,0,0,.72))}
+.time{font:700 34px/1 ui-monospace,SFMono-Regular,Menlo,monospace}
+.meta{color:#cfc8d2;font-size:13px;margin-top:6px}
+.tag{background:var(--amber);color:#160f04;font-weight:700;font-size:12px;letter-spacing:.1em;
+  text-transform:uppercase;padding:6px 11px;border-radius:4px;white-space:nowrap}
+.controls{display:flex;align-items:center;gap:14px;margin:18px 0 6px;flex-wrap:wrap}
+button{background:var(--panel);color:var(--cream);border:1px solid var(--line);border-radius:7px;
+  padding:9px 15px;font-size:14px;cursor:pointer;font-weight:600;font-family:inherit}
+button:hover{border-color:var(--amber);color:var(--amber)}
+button.on{background:var(--amber);color:#160f04;border-color:var(--amber)}
+button.v:hover{border-color:var(--violet);color:var(--violet)}
+button.v.on{background:var(--violet);color:#170a16;border-color:var(--violet)}
+input[type=range]{flex:1;min-width:220px;accent-color:var(--amber)}
+.axis{position:relative;height:40px;margin-top:4px}
+.axis .seg{position:absolute;top:0;height:8px;border-radius:3px;opacity:.75}
+.axis .lab{position:absolute;top:14px;font:11px/1 ui-monospace,Menlo,monospace;color:var(--dim);white-space:nowrap}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 14px}
+.chip{font-size:13px;padding:7px 13px;border-radius:999px;border:1px solid var(--line);
+  background:var(--panel);color:var(--dim);cursor:pointer}
+.chip.on{border-color:var(--amber);color:var(--amber)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:10px}
+.cell{position:relative;aspect-ratio:1;border-radius:7px;overflow:hidden;background:#000;
+  cursor:pointer;border:2px solid transparent}
+.cell img{width:100%;height:100%;object-fit:cover;display:block}
+.cell.sel{border-color:var(--amber)}
+.cell span{position:absolute;left:0;right:0;bottom:0;padding:6px;
+  background:linear-gradient(transparent,rgba(0,0,0,.85));font:11px/1 ui-monospace,Menlo,monospace;color:#e6dfe9}
+.poster{display:grid;grid-template-columns:minmax(0,320px) 1fr;gap:30px;align-items:start}
+@media(max-width:720px){.poster{grid-template-columns:1fr}}
+.poster img{width:100%;border-radius:8px;border:1px solid var(--line)}
+.dl{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.dl a{display:inline-block;background:var(--panel);border:1px solid var(--line);border-radius:7px;
+  padding:10px 16px;color:var(--cream);text-decoration:none;font-size:14px;font-weight:600}
+.dl a:hover{border-color:var(--amber);color:var(--amber)}
+.dl a small{display:block;font-weight:400;color:var(--dim);font-size:12px;margin-top:2px}
+dl.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;margin:0}
+dl.facts dt{font:700 11px/1 ui-monospace,Menlo,monospace;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--dim);margin-bottom:6px}
+dl.facts dd{margin:0;font-size:15px}
+footer{border-top:1px solid var(--line);margin-top:60px;padding-top:22px;color:var(--dim);
+  font:12px/1.8 ui-monospace,Menlo,monospace;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.kbd{border:1px solid var(--line);border-radius:4px;padding:1px 6px;font-size:11px}
+</style></head><body><div class="wrap">
+
+<a class="home" href="../">&larr; Amol Sarva</a>
+
+<header>
+  <div class="kicker">TOTAL SOLAR ECLIPSE</div>
+  <h1>MANACOR</h1>
+  <div class="sub">Mallorca &middot; 12 August 2026 &middot; totality 20:31 CEST</div>
+  <p class="lede">The moon caught the sun about two and a half degrees above the horizon, so
+  totality arrived folded into the sunset &mdash; barely clearing the ridgeline, with the last
+  orange light of the day in the same frame. Fifty-three stills, a time-lapse that runs on into
+  the dark, and a two-and-a-half minute film assembled from both. All of it shot on a phone.</p>
+</header>
+
+<h2><i>The film</i> &nbsp;·&nbsp; 2 min 31 s</h2>
+<div class="film">
+  <video controls playsinline preload="metadata" poster="img/IMG_2733.jpg">
+    <source src="film.mp4" type="video/mp4">
+  </video>
+</div>
+<div class="cap">Stills held in sequence with the exposure data burned in, cut with the two
+  time-lapse segments. It slows down through totality.</div>
+
+<h2><b>The time-lapse</b> &nbsp;·&nbsp; from 19:48</h2>
+<div class="tlrow">
+  <div>
+    <video id="vid" controls playsinline preload="metadata" poster="tl/tl00.jpg">
+      <source id="vsrc" src="timelapse_full.mp4" type="video/mp4">
+    </video>
+    <div class="cap" id="vnote"></div>
+  </div>
+  <div>
+    <div class="tlbtns">
+      <button class="v on" id="bFull">Full &middot; 30s</button>
+      <button class="v" id="bShort">Short &middot; 12s</button>
+    </div>
+    <div class="tlstrip" id="tlstrip"></div>
+    <div class="cap">Started at 19:48:54, when the light first went strange. It runs past the
+      last still photograph and into full dark &mdash; the town lights come up at the end.
+      Click any frame to jump there.</div>
+  </div>
+</div>
+
+<h2>The stills &nbsp;·&nbsp; 12:38 &rarr; 20:32</h2>
+<div class="stage">
+  <img class="bg" id="bg" alt=""><img class="fg" id="fg" alt="">
+  <div class="hud">
+    <div><div class="time" id="tTime">--:--:--</div><div class="meta" id="tMeta"></div></div>
+    <div class="tag" id="tTag"></div>
+  </div>
+</div>
+<div class="controls">
+  <button id="play">&#9654;&#xFE0E; Play</button><button id="prev">&larr;</button><button id="next">&rarr;</button>
+  <input type="range" id="scrub" min="0" value="0" step="1">
+  <button id="jump">Jump to totality</button>
+</div>
+<div class="axis" id="axis"></div>
+
+<h2>All frames</h2>
+<div class="chips" id="chips"></div>
+<div class="grid" id="grid"></div>
+
+<h2>The poster</h2>
+<div class="poster">
+  <a href="poster-18x24.jpg"><img src="poster-preview.jpg" alt="Eclipse poster, 18 by 24 inches"></a>
+  <div>
+    <dl class="facts">
+      <div><dt>Size</dt><dd>18 &times; 24 in at 200 dpi</dd></div>
+      <div><dt>Contents</dt><dd>Hero frame, time-lapse strip, 12-frame progression</dd></div>
+      <div><dt>Hero</dt><dd>20:31:17 &middot; 1/9s &middot; ISO 250</dd></div>
+    </dl>
+    <div class="dl">
+      <a href="poster-18x24.jpg" download>Poster<small>JPEG &middot; 3600 &times; 4800 &middot; 1.3 MB</small></a>
+      <a href="film.mp4" download>Film<small>MP4 &middot; 2:31 &middot; 9.8 MB</small></a>
+      <a href="timelapse_full.mp4" download>Time-lapse<small>MP4 &middot; 0:30 &middot; 3.6 MB</small></a>
+    </div>
+  </div>
+</div>
+
+<p class="cap" style="max-width:66ch;margin-top:44px">Phase labels here are derived from the
+  photographs&rsquo; own exposure data &mdash; the point where shutter and ISO jump &mdash; not from
+  an ephemeris, so the boundaries are approximate. For reference, published times for Palma put
+  totality at 20:31:05&ndash;20:32:41 with the sun 2&frac12;&deg; up
+  (<a href="https://skyandtelescope.org/astronomy-travel/mallorca-2026/">Sky &amp; Telescope</a>);
+  Manacor sits about 45 km east of that, so its local timings differ slightly.</p>
+
+<footer>
+  <div>Shot on iPhone Air &middot; 39&deg;38.7&#39;N 3&deg;13.9&#39;E &middot; 206 m &middot;
+    53 stills + time-lapse &middot; times are CEST</div>
+  <div><span class="kbd">&larr;</span> <span class="kbd">&rarr;</span> step &middot;
+    <span class="kbd">space</span> play</div>
+</footer>
+</div>
+<script>
+const DATA = [{"id":"IMG_2684","t":"12:38:27","phase":"01-before","phaseName":"Before","iso":64,"exp":"1/6993s"},{"id":"IMG_2685","t":"14:40:19","phase":"01-before","phaseName":"Before","iso":64,"exp":"1/4950s"},{"id":"IMG_2689","t":"18:39:09","phase":"01-before","phaseName":"Before","iso":50,"exp":"1/25000s"},{"id":"IMG_2690","t":"18:39:12","phase":"01-before","phaseName":"Before","iso":50,"exp":"1/25000s"},{"id":"IMG_2692","t":"20:01:20","phase":"02-partial","phaseName":"Partial","iso":640,"exp":"1/5s"},{"id":"IMG_2693","t":"20:01:22","phase":"02-partial","phaseName":"Partial","iso":640,"exp":"1/6s"},{"id":"IMG_2694","t":"20:11:44","phase":"02-partial","phaseName":"Partial","iso":320,"exp":"1/30s"},{"id":"IMG_2698","t":"20:24:34","phase":"02-partial","phaseName":"Partial","iso":2500,"exp":"1s"},{"id":"IMG_2699","t":"20:24:51","phase":"02-partial","phaseName":"Partial","iso":1250,"exp":"1/2s"},{"id":"IMG_2705","t":"20:28:34","phase":"02-partial","phaseName":"Partial","iso":50,"exp":"1/1136s"},{"id":"IMG_2706","t":"20:29:18","phase":"02-partial","phaseName":"Partial","iso":64,"exp":"1/121s"},{"id":"IMG_2707","t":"20:29:20","phase":"02-partial","phaseName":"Partial","iso":50,"exp":"1/121s"},{"id":"IMG_2708","t":"20:29:53","phase":"02-partial","phaseName":"Partial","iso":32,"exp":"1/122s"},{"id":"IMG_2709","t":"20:29:56","phase":"02-partial","phaseName":"Partial","iso":40,"exp":"1/243s"},{"id":"IMG_2710","t":"20:29:59","phase":"02-partial","phaseName":"Partial","iso":50,"exp":"1/386s"},{"id":"IMG_2711","t":"20:30:00","phase":"02-partial","phaseName":"Partial","iso":50,"exp":"1/386s"},{"id":"IMG_2712","t":"20:30:20","phase":"03-totality","phaseName":"Totality","iso":400,"exp":"1/60s"},{"id":"IMG_2713","t":"20:30:22","phase":"03-totality","phaseName":"Totality","iso":250,"exp":"1/60s"},{"id":"IMG_2714","t":"20:30:26","phase":"03-totality","phaseName":"Totality","iso":320,"exp":"1/60s"},{"id":"IMG_2715","t":"20:30:48","phase":"03-totality","phaseName":"Totality","iso":500,"exp":"1/25s"},{"id":"IMG_2716","t":"20:30:49","phase":"03-totality","phaseName":"Totality","iso":500,"exp":"1/25s"},{"id":"IMG_2717","t":"20:30:50","phase":"03-totality","phaseName":"Totality","iso":500,"exp":"1/25s"},{"id":"IMG_2718","t":"20:30:51","phase":"03-totality","phaseName":"Totality","iso":500,"exp":"1/25s"},{"id":"IMG_2719","t":"20:30:55","phase":"03-totality","phaseName":"Totality","iso":500,"exp":"1/20s"},{"id":"IMG_2720","t":"20:30:58","phase":"03-totality","phaseName":"Totality","iso":160,"exp":"1/33s"},{"id":"IMG_2721","t":"20:30:58","phase":"03-totality","phaseName":"Totality","iso":160,"exp":"1/33s"},{"id":"IMG_2722","t":"20:30:59","phase":"03-totality","phaseName":"Totality","iso":160,"exp":"1/33s"},{"id":"IMG_2723","t":"20:31:00","phase":"03-totality","phaseName":"Totality","iso":160,"exp":"1/33s"},{"id":"IMG_2724","t":"20:31:00","phase":"03-totality","phaseName":"Totality","iso":160,"exp":"1/33s"},{"id":"IMG_2725","t":"20:31:01","phase":"03-totality","phaseName":"Totality","iso":160,"exp":"1/33s"},{"id":"IMG_2726","t":"20:31:02","phase":"03-totality","phaseName":"Totality","iso":160,"exp":"1/33s"},{"id":"IMG_2727","t":"20:31:03","phase":"03-totality","phaseName":"Totality","iso":160,"exp":"1/33s"},{"id":"IMG_2728","t":"20:31:04","phase":"03-totality","phaseName":"Totality","iso":160,"exp":"1/33s"},{"id":"IMG_2729","t":"20:31:05","phase":"03-totality","phaseName":"Totality","iso":160,"exp":"1/33s"},{"id":"IMG_2730","t":"20:31:07","phase":"03-totality","phaseName":"Totality","iso":160,"exp":"1/33s"},{"id":"IMG_2731","t":"20:31:08","phase":"03-totality","phaseName":"Totality","iso":160,"exp":"1/33s"},{"id":"IMG_2732","t":"20:31:09","phase":"03-totality","phaseName":"Totality","iso":500,"exp":"1/20s"},{"id":"IMG_2733","t":"20:31:17","phase":"03-totality","phaseName":"Totality","iso":250,"exp":"1/9s"},{"id":"IMG_2734","t":"20:31:22","phase":"03-totality","phaseName":"Totality","iso":320,"exp":"1/9s"},{"id":"IMG_2735","t":"20:31:48","phase":"03-totality","phaseName":"Totality","iso":500,"exp":"1/18s"},{"id":"IMG_2736","t":"20:31:53","phase":"03-totality","phaseName":"Totality","iso":320,"exp":"1/9s"},{"id":"IMG_2737","t":"20:31:59","phase":"03-totality","phaseName":"Totality","iso":500,"exp":"1/18s"},{"id":"IMG_2738","t":"20:32:01","phase":"03-totality","phaseName":"Totality","iso":500,"exp":"1/18s"},{"id":"IMG_2739","t":"20:32:14","phase":"04-afterglow","phaseName":"Afterglow","iso":640,"exp":"1/25s"},{"id":"IMG_2740","t":"20:32:18","phase":"04-afterglow","phaseName":"Afterglow","iso":400,"exp":"1/20s"},{"id":"IMG_2741","t":"20:32:19","phase":"04-afterglow","phaseName":"Afterglow","iso":400,"exp":"1/20s"},{"id":"IMG_2742","t":"20:32:23","phase":"04-afterglow","phaseName":"Afterglow","iso":640,"exp":"1/30s"},{"id":"IMG_2743","t":"20:32:25","phase":"04-afterglow","phaseName":"Afterglow","iso":640,"exp":"1/30s"},{"id":"IMG_2744","t":"20:32:26","phase":"04-afterglow","phaseName":"Afterglow","iso":640,"exp":"1/32s"},{"id":"IMG_2745","t":"20:32:27","phase":"04-afterglow","phaseName":"Afterglow","iso":640,"exp":"1/32s"},{"id":"IMG_2746","t":"20:32:28","phase":"04-afterglow","phaseName":"Afterglow","iso":640,"exp":"1/33s"},{"id":"IMG_2747","t":"20:32:29","phase":"04-afterglow","phaseName":"Afterglow","iso":640,"exp":"1/33s"},{"id":"IMG_2748","t":"20:32:33","phase":"04-afterglow","phaseName":"Afterglow","iso":400,"exp":"1/29s"}], TL = [{"i":0,"t":0.5,"label":"start"},{"i":1,"t":4.5,"label":"sun low"},{"i":2,"t":8.0,"label":"at the horizon"},{"i":3,"t":11.5,"label":"last light"},{"i":4,"t":16.0,"label":"afterglow"},{"i":5,"t":22.0,"label":"night"}];
+const COLORS = {"01-before":"#4a6fa5","02-partial":"#c97a3a","03-totality":"#e89a3c","04-afterglow":"#5f7fa8"};
+let idx = 0, playing = false, timer = null, filter = "all";
+const $ = s => document.querySelector(s);
+
+const vid = $("#vid"), vsrc = $("#vsrc");
+function setClip(which){
+  vsrc.src = which === "full" ? "timelapse_full.mp4" : "timelapse_short.mp4";
+  vid.load();
+  $("#bFull").classList.toggle("on", which === "full");
+  $("#bShort").classList.toggle("on", which === "short");
+  $("#vnote").textContent = which === "full"
+    ? "30 s · the whole evening, sun to city lights"
+    : "12 s · trimmed to the sun going down";
+}
+$("#bFull").onclick = () => setClip("full");
+$("#bShort").onclick = () => setClip("short");
+setClip("full");
+
+const strip = $("#tlstrip");
+TL.forEach(f => {
+  const el = document.createElement("div");
+  el.innerHTML = '<img loading="lazy" src="tl/tl' + String(f.i).padStart(2,"0") +
+                 '.jpg" alt="' + f.label + '"><span>' + f.label + '</span>';
+  el.onclick = () => {
+    if (!$("#bFull").classList.contains("on")) setClip("full");
+    const go = () => { vid.currentTime = f.t; vid.play(); };
+    if (vid.readyState >= 1) go(); else vid.addEventListener("loadedmetadata", go, {once:true});
+  };
+  strip.appendChild(el);
+});
+
+const fg = $("#fg"), bg = $("#bg"), scrub = $("#scrub");
+scrub.max = DATA.length - 1;
+function show(i){
+  idx = Math.max(0, Math.min(DATA.length - 1, i));
+  const d = DATA[idx], src = "img/" + d.id + ".jpg";
+  fg.src = src; bg.src = src;
+  $("#tTime").textContent = d.t;
+  $("#tMeta").textContent = d.exp + "   ·   ISO " + d.iso + "   ·   " + d.id;
+  $("#tTag").textContent = d.phaseName;
+  $("#tTag").style.background = COLORS[d.phase];
+  scrub.value = idx;
+  document.querySelectorAll(".cell").forEach(c => c.classList.toggle("sel", +c.dataset.i === idx));
+}
+function hold(){ return DATA[idx].phase === "03-totality" ? 620 : 400; }
+function step(){ if (idx >= DATA.length-1){ stop(); return; } show(idx+1); timer = setTimeout(step, hold()); }
+function start(){ playing = true; $("#play").textContent = "❚❚ Pause"; $("#play").classList.add("on");
+  if (idx >= DATA.length-1) show(0); timer = setTimeout(step, hold()); }
+function stop(){ playing = false; $("#play").textContent = "▶︎ Play"; $("#play").classList.remove("on");
+  clearTimeout(timer); }
+$("#play").onclick = () => playing ? stop() : start();
+$("#prev").onclick = () => { stop(); show(idx-1); };
+$("#next").onclick = () => { stop(); show(idx+1); };
+scrub.oninput = () => { stop(); show(+scrub.value); };
+$("#jump").onclick = () => { stop(); show(DATA.findIndex(d => d.phase === "03-totality")); };
+document.addEventListener("keydown", e => {
+  if (["INPUT","VIDEO","BUTTON","TEXTAREA"].includes(e.target.tagName)) return;
+  if (e.key === "ArrowLeft"){ stop(); show(idx-1); e.preventDefault(); }
+  if (e.key === "ArrowRight"){ stop(); show(idx+1); e.preventDefault(); }
+  if (e.code === "Space"){ playing ? stop() : start(); e.preventDefault(); }
+});
+
+const axis = $("#axis");
+let run = [];
+DATA.forEach((d,i) => {
+  if (run.length && run[run.length-1].phase === d.phase) run[run.length-1].end = i;
+  else run.push({phase:d.phase, start:i, end:i, name:d.phaseName});
+});
+run.forEach(r => {
+  const s = document.createElement("div"); s.className = "seg";
+  s.style.left = (100*r.start/(DATA.length-1)) + "%";
+  s.style.width = Math.max(0.8, 100*(r.end-r.start+1)/DATA.length) + "%";
+  s.style.background = COLORS[r.phase]; s.title = r.name;
+  axis.appendChild(s);
+  if (r.end - r.start >= 2){
+    const l = document.createElement("div"); l.className = "lab";
+    l.style.left = (100*r.start/(DATA.length-1)) + "%";
+    l.textContent = r.name + " " + DATA[r.start].t.slice(0,5);
+    axis.appendChild(l);
+  }
+});
+
+const phases = ["all", ...[...new Set(DATA.map(d=>d.phase))].sort()];
+const chips = $("#chips");
+phases.forEach(p => {
+  const c = document.createElement("div");
+  c.className = "chip" + (p === "all" ? " on" : "");
+  const n = p === "all" ? DATA.length : DATA.filter(d=>d.phase===p).length;
+  c.textContent = (p === "all" ? "All" : DATA.find(d=>d.phase===p).phaseName) + " · " + n;
+  c.onclick = () => { filter = p; [...chips.children].forEach(x=>x.classList.remove("on"));
+    c.classList.add("on"); renderGrid(); };
+  chips.appendChild(c);
+});
+const grid = $("#grid");
+function renderGrid(){
+  grid.innerHTML = "";
+  DATA.forEach((d,i) => {
+    if (filter !== "all" && d.phase !== filter) return;
+    const cell = document.createElement("div");
+    cell.className = "cell" + (i === idx ? " sel" : "");
+    cell.dataset.i = i;
+    cell.innerHTML = '<img loading="lazy" src="thumb/' + d.id + '.jpg" alt="' + d.t + '"><span>' + d.t + '</span>';
+    cell.onclick = () => { stop(); show(i); $(".stage").scrollIntoView({behavior:"smooth", block:"center"}); };
+    grid.appendChild(cell);
+  });
+}
+renderGrid();
+show(0);
+</script></body></html>
