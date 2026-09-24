@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amol's App Store - Mac Scripts</title>
+  <title>Amol's App Store - Projects, Agents, and Mac Tools</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; }
     * { margin: 0; }
@@ -292,6 +292,7 @@
       color: var(--quiet);
     }
 
+    .new-badge { font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 99px; background: #30d158; color: #fff; vertical-align: middle; }
     .filters {
       display: flex;
       flex-wrap: wrap;
@@ -314,6 +315,86 @@
       color: #08100c;
       border-color: var(--green);
       background: var(--green);
+    }
+
+    .howto {
+      margin: 18px 0 10px;
+      padding: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-radius: 10px;
+      background: linear-gradient(180deg, rgba(91, 209, 134, 0.06), rgba(255, 255, 255, 0.02));
+    }
+
+    .howto h2 {
+      font-size: 1.28rem;
+      letter-spacing: 0;
+    }
+
+    .howto > p {
+      margin-top: 6px;
+      max-width: 640px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .howto-grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .howto-step {
+      position: relative;
+      padding: 16px 16px 16px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .howto-step .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font: 700 0.74rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--green);
+    }
+
+    .howto-step h3 {
+      margin-top: 10px;
+      font-size: 1.02rem;
+      letter-spacing: 0;
+    }
+
+    .howto-step p {
+      margin-top: 7px;
+      color: #b9c4d3;
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+
+    .howto-step .level {
+      display: inline-block;
+      margin-top: 11px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      color: #cbd5e1;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    .howto-note {
+      margin-top: 16px;
+      padding: 13px 15px;
+      border-left: 3px solid var(--gold);
+      border-radius: 4px;
+      background: rgba(230, 189, 87, 0.07);
+      color: #d8d1bd;
+      font-size: 0.86rem;
+      line-height: 1.5;
     }
 
     .section-head {
@@ -472,55 +553,6 @@
       flex: 1;
     }
 
-    .explain {
-      border: 1px solid rgba(99, 207, 195, 0.20);
-      border-radius: 8px;
-      background: rgba(99, 207, 195, 0.055);
-    }
-
-    .explain summary {
-      min-height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 0 11px;
-      color: #e2fbf7;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: 0.82rem;
-      list-style: none;
-    }
-
-    .explain summary::-webkit-details-marker { display: none; }
-
-    .explain summary::after {
-      content: "+";
-      color: var(--teal);
-      font: 700 1rem/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    }
-
-    .explain[open] summary::after { content: "-"; }
-
-    .explain-body {
-      display: grid;
-      gap: 10px;
-      padding: 0 11px 12px;
-    }
-
-    .explain-item strong {
-      display: block;
-      margin-bottom: 2px;
-      color: #f4f7fb;
-      font-size: 0.76rem;
-    }
-
-    .app-card .explain-item p {
-      color: #aebdcb;
-      font-size: 0.82rem;
-      line-height: 1.42;
-    }
-
     .chips {
       display: flex;
       flex-wrap: wrap;
@@ -594,6 +626,7 @@
     @media (max-width: 980px) {
       .hero { grid-template-columns: 1fr; }
       .hero-copy { min-height: auto; }
+      .howto-grid { grid-template-columns: 1fr; }
       .featured-grid { grid-template-columns: 1fr; }
       .app-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .toolbar { grid-template-columns: 1fr; }
@@ -618,14 +651,14 @@
       <a class="brand" href="https://amolsarva.com">
         <span class="brand-mark">$</span>
         <span class="brand-text">
-          <strong>Mac Scripts</strong>
-          <span>small tools for shipping</span>
+          <strong>Amol's App Store</strong>
+          <span>agents, web apps, scripts</span>
         </span>
       </a>
       <nav class="nav-actions" aria-label="Catalog links">
         <a class="btn" href="#catalog">Browse</a>
-        <a class="btn" href="https://github.com/amolsarva/amols-app-store/archive/refs/heads/main.zip">Download</a>
-        <a class="btn primary" href="https://github.com/amolsarva/amols-app-store" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://github.com/amolsarva" target="_blank" rel="noopener">GitHub Shelf</a>
+        <a class="btn primary" href="#catalog">Open Store</a>
       </nav>
     </div>
   </header>
@@ -633,30 +666,29 @@
   <main>
     <section class="shell hero">
       <div class="hero-copy">
-        <span class="kicker">13 working notes turned into apps</span>
+        <span class="kicker">16 working notes turned into products</span>
         <h1>Amol's App Store</h1>
-        <p>I build companies, back founders, teach venture, and write about systems. These are the little machines I make for my own Mac when the work needs to move faster: preserve the record, clear the clutter, keep the computer awake, and ship while I sleep.</p>
+        <p>A shelf of public experiments, agents, web apps, and Mac tools: oral-history bots, workplace-evidence systems, sleep jokes that became apps, and the small local utilities that keep the machine clean enough to keep shipping.</p>
         <div class="stats" aria-label="Catalog stats">
-          <div class="stat"><strong>13</strong><span>personal utilities</span></div>
-          <div class="stat"><strong>0</strong><span>subscriptions</span></div>
-          <div class="stat"><strong>1998</strong><span>blog habit energy</span></div>
+          <div class="stat"><strong id="stat-apps"></strong><span>apps and projects</span></div>
+          <div class="stat"><strong id="stat-featured"></strong><span>featured projects</span></div>
+          <div class="stat"><strong>0</strong><span>permission slips</span></div>
         </div>
       </div>
 
       <aside class="terminal" aria-label="Install preview">
         <div class="terminal-bar">
           <div class="dots" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
-          <span>~/mac-scripts/app-store</span>
+          <span>~/amol/app-store</span>
         </div>
         <div class="terminal-body">
-          <span class="line"><span class="prompt">amol@mac</span> <span class="cmd">git clone github.com/amolsarva/amols-app-store</span></span>
-          <span class="line dim">Cloning into 'amols-app-store'...</span>
-          <span class="line ok">field note: tiny tools beat repeated chores</span>
-          <span class="line ok">ready: preserve the record</span>
-          <span class="line ok">ready: clear the clutter</span>
-          <span class="line warn">note: useful first, polished later</span>
-          <span class="line"><span class="prompt">amol@mac</span> <span class="cmd">open launcher.command</span></span>
-          <span class="line ok">launching local catalog...</span>
+          <span class="line"><span class="prompt">amol@mac</span> <span class="cmd">open dadsbot.vercel.app</span></span>
+          <span class="line ok">recording family history...</span>
+          <span class="line"><span class="prompt">amol@mac</span> <span class="cmd">uv run opensore</span></span>
+          <span class="line ok">building evidence timelines...</span>
+          <span class="line"><span class="prompt">amol@mac</span> <span class="cmd">open amolsarva.github.io/OpenSNORE</span></span>
+          <span class="line ok">snore engine armed...</span>
+          <span class="line warn">then: clean the Mac, export the record, push the repo</span>
         </div>
       </aside>
     </section>
@@ -664,16 +696,46 @@
     <section class="shell toolbar" aria-label="Search and filters">
       <label class="search">
         <span aria-hidden="true">⌕</span>
-        <input id="search" type="search" placeholder="Search scripts, jobs, tags..." autocomplete="off" />
+        <input id="search" type="search" placeholder="Search apps, agents, scripts, jobs, tags..." autocomplete="off" />
       </label>
       <div class="filters" id="filters"></div>
+    </section>
+
+    <section class="shell">
+      <div class="howto" aria-label="How to get going">
+        <h2>How to get going</h2>
+        <p>You don't need to be a programmer. Everything here is one of three types — find the kind of tool you want, and follow the matching path.</p>
+        <div class="howto-grid">
+          <div class="howto-step">
+            <span class="badge">🌐 &nbsp;Web apps</span>
+            <h3>Just click and use</h3>
+            <p>Tools like <strong>DadsBot</strong> and <strong>OpenSnoRE</strong> open right in your browser. Hit <strong>Try</strong> on the card — nothing to download or install.</p>
+            <span class="level">No setup</span>
+          </div>
+          <div class="howto-step">
+            <span class="badge">🧩 &nbsp;Chrome extensions</span>
+            <h3>Add to Chrome once</h3>
+            <p>Open <code>chrome://extensions</code>, flip on <strong>Developer mode</strong> (top-right), click <strong>Load unpacked</strong>, and pick the extension's folder. It then lives in your toolbar.</p>
+            <span class="level">A little setup</span>
+          </div>
+          <div class="howto-step">
+            <span class="badge">🖥️ &nbsp;Mac scripts</span>
+            <h3>Download &amp; double-click</h3>
+            <p>Hit <strong>Get</strong>, then <strong>double-click</strong> the downloaded <code>.command</code> file — Terminal opens and runs it. Every cleanup tool shows you the mess and asks before deleting a thing.</p>
+            <span class="level">A little setup</span>
+          </div>
+        </div>
+        <div class="howto-note">
+          💡 First time opening a downloaded Mac script, macOS may warn it's from an "unidentified developer." Right-click the file → <strong>Open</strong> → <strong>Open</strong> once, and you're set. Want the full collection and per-tool instructions? See the <a href="https://github.com/amolsarva/amols-app-store" target="_blank" rel="noopener" style="color:var(--green);">GitHub shelf</a>.
+        </div>
+      </div>
     </section>
 
     <section class="shell">
       <div class="section-head">
         <div>
           <h2>Featured</h2>
-          <p>The ones that most directly match how I work: write it down, automate the repeat, move on.</p>
+          <p>The projects with their own product spine, public surface, or strange little gravity.</p>
         </div>
       </div>
       <div class="featured-grid" id="featured"></div>
@@ -683,209 +745,512 @@
       <div class="section-head">
         <div>
           <h2>All Apps</h2>
-          <p id="result-count">13 available</p>
+          <p id="result-count"></p>
         </div>
       </div>
       <div class="app-grid" id="apps"></div>
-      <div class="empty" id="empty">No scripts match that search.</div>
+      <div class="empty" id="empty">No apps match that search.</div>
     </section>
   </main>
 
   <footer>
     <div class="shell">
-      <span>Built in the spirit of field notes: observe the mess, make the tool, keep moving.</span>
-      <span><a href="https://amolsarva.com">amolsarva.com</a> / <a href="https://github.com/amolsarva/amols-app-store" target="_blank" rel="noopener">GitHub</a></span>
+      <span>Built in the spirit of field notes: observe the mess, make the tool, put it where people can try it.</span>
+      <span><a href="https://amolsarva.com">amolsarva.com</a> / <a href="https://github.com/amolsarva" target="_blank" rel="noopener">github.com/amolsarva</a></span>
     </div>
   </footer>
 
   <script>
+    // catalog:start
     const apps = [
-      {
-        id: "imessage-cleanup",
-        name: "iMessage Cleanup",
-        slug: "imessage-cleanup",
-        icon: "💬",
-        category: "storage",
-        tags: ["storage", "icloud", "sqlite", "contacts"],
-        color: "linear-gradient(135deg, #1f6feb, #7c3aed)",
-        summary: "Copies Mac Messages into per-person archive folders so conversations are easier to find and back up.",
-        story: "Old conversations are decisions, context, favors, family, and receipts. This makes a readable archive from the Messages database without making the first move be deletion.",
-        details: [
-          ["Where do messages go?", "Into local archive folders on the Mac, organized by person or thread. Each folder can include a transcript, media files, a copy of the source database slice, and a manifest that says what was exported."],
-          ["Does it delete them?", "No. The safe path is copy first, inspect the archive, then decide separately whether to remove anything from Messages or iCloud. The archive is meant to make deletion less scary, not automatic."],
-          ["How do you find them later?", "The folder names and manifest are the index: search by person, phone number, email, date, or file name in Finder or Spotlight instead of scrolling inside Messages."]
-        ],
-        path: "imessage-cleanup/imessage_cleanup.sh",
-        featured: true
-      },
-      {
-        id: "github-autopush",
-        name: "GitHub Autopush",
-        slug: "github-autopush",
-        icon: "↻",
-        category: "productivity",
-        tags: ["git", "launchagent", "sync"],
-        color: "linear-gradient(135deg, #44d17d, #1f9a6a)",
-        summary: "Keeps local repos moving to GitHub with readable commits and a background LaunchAgent.",
-        story: "Ship While You Sleep, but for the pile of local experiments. I make a lot of small things; this keeps the good ones from living only on one laptop.",
-        path: "github-autopush/",
-        featured: true
-      },
-      {
-        id: "google-voice-exporter-extension",
-        name: "Google Voice Exporter",
-        slug: "google-voice-exporter-extension",
-        icon: "☎️",
-        category: "contacts",
-        tags: ["chrome", "contacts", "export"],
-        color: "linear-gradient(135deg, #ff6fae, #ff9f43)",
-        summary: "Exports the open Google Voice thread as JSON, CSV, or TXT with attachment URLs and logs.",
-        story: "The phone is still where half of real life happens: founders, contractors, school, family, buildings, quick deals. This makes those threads portable before they disappear behind somebody else's interface.",
-        path: "google-voice-exporter-extension/",
-        featured: true
-      },
-      {
-        id: "meet-tab-sidecar-extension",
-        name: "Meet Tab Sidecar",
-        slug: "meet-tab-sidecar-extension",
-        icon: "M",
-        category: "productivity",
-        tags: ["chrome", "meet", "audio", "presentation"],
-        color: "linear-gradient(135deg, #2dd4bf, #2563eb)",
-        summary: "Chrome extension for joining a Meet while a sidecar tab handles audio, intros, or presentation work.",
-        story: "Meetings should produce a useful artifact, not just another happening. This lets another tab do the repeatable work while I stay focused on the conversation.",
-        path: "downloads/meet-tab-sidecar-extension.zip",
-        featured: true
-      },
-      {
-        id: "screenshot-tidy",
-        name: "Screenshot Tidy",
-        slug: "screenshot-tidy",
-        icon: "📸",
-        category: "productivity",
-        tags: ["desktop", "launchagent", "screenshots"],
-        color: "linear-gradient(135deg, #62a8ff, #55d6c2)",
-        summary: "Moves screenshots off the Desktop into a real Screenshots folder and keeps the habit alive.",
-        story: "Screenshots are field notes from the day: a chart, a bug, a building, a founder deck. They should be findable, not sprinkled across the Desktop like confetti.",
-        path: "screenshot-tidy/"
-      },
-      {
-        id: "cleanicloud",
-        name: "Clean iCloud",
-        slug: "cleanicloud",
-        icon: "☁️",
-        category: "storage",
-        tags: ["icloud", "duplicates", "large-files"],
-        color: "linear-gradient(135deg, #55d6c2, #2f80ed)",
-        summary: "Finds iCloud duplicates and suspiciously large clusters, then asks before removing anything.",
-        story: "The cloud is useful until it becomes a rent-seeking attic. This is for the recurring moment when I want the machine to show me the mess plainly before I clean it.",
-        path: "cleanicloud/cleanicloud.sh"
-      },
-      {
-        id: "bigfiles",
-        name: "Bigfiles",
-        slug: "bigfiles",
-        icon: "📦",
-        category: "storage",
-        tags: ["disk", "audit", "archive"],
-        color: "linear-gradient(135deg, #f0c45b, #ff705d)",
-        summary: "Finds heavy folders and checks recent activity before I decide what to archive.",
-        story: "A Mac accumulates the sediment of every company, course, podcast, trip, and project. Bigfiles is the map before the excavation.",
-        path: "bigfiles/bigfiles.sh"
-      },
-      {
-        id: "cpu-guard",
-        name: "CPU Guard",
-        slug: "cpu-guard",
-        icon: "🔥",
-        category: "monitoring",
-        tags: ["cpu", "watchdog", "python"],
-        color: "linear-gradient(135deg, #ff705d, #b993ff)",
-        summary: "Stops known noisy macOS background processes after sustained high CPU, with quiet action-only notifications.",
-        story: "My computer should spend cycles on writing, calls, code, and research, not an invisible daemon melting the fan. This is a small guardrail for flow.",
-        path: "cpu-guard/cpu_guard.py"
-      },
-      {
-        id: "drive-dedup",
-        name: "Drive Dedup",
-        slug: "drive-dedup",
-        icon: "💿",
-        category: "storage",
-        tags: ["external-drive", "duplicates", "python"],
-        color: "linear-gradient(135deg, #b993ff, #62a8ff)",
-        summary: "Finds duplicate files on external drives, then makes a reviewable plan before anything is removed.",
-        story: "Old drives are archaeological sites. This is for consolidating the useful record, keeping the best copy, and leaving a trail so the original can be found again.",
-        details: [
-          ["After it finds duplicates, then what?", "It groups matching files and proposes a keeper copy. The useful next step is review: confirm the keeper, move extras to a holding folder, and only delete after the drive still looks right."],
-          ["How do you find the file later?", "The consolidation plan becomes a map. It records duplicate paths, the chosen keeper path, and what moved, so you can search the report instead of guessing which drive or folder had the original."],
-          ["Why not just delete everything?", "Duplicates often exist because the original was hard to find. The tool treats that as an organization problem first and a deletion problem second."]
-        ],
-        path: "drive-dedup/"
-      },
-      {
-        id: "mac-migrator",
-        name: "Mac Migrator",
-        slug: "mac-migrator",
-        icon: "🖥️",
-        category: "migration",
-        tags: ["migration", "launchagents", "dotfiles"],
-        color: "linear-gradient(135deg, #cbd5e1, #64748b)",
-        summary: "Bundles LaunchAgents, shell config, automation folders, brew lists, diagnostics, and restore steps.",
-        story: "I have rebuilt the same working environment across too many machines. This turns a Mac migration from oral tradition into an actual written system.",
-        path: "mac-migrator/mac_background_migrator.sh"
-      },
-      {
-        id: "abbu-to-csv",
-        name: "ABBU to CSV",
-        slug: "abbu-to-csv",
-        icon: "📇",
-        category: "contacts",
-        tags: ["contacts", "csv", "backup"],
-        color: "linear-gradient(135deg, #44d17d, #62a8ff)",
-        summary: "Turns an Apple Contacts backup into a readable CSV file you can open in Numbers or Excel.",
-        story: "An .abbu file is Apple's Contacts backup bundle. This pulls the contact list out into a normal spreadsheet-style file so the data is inspectable and portable.",
-        details: [
-          ["Where do the contacts come from?", "From an Apple Contacts .abbu backup made on the Mac. If your iPhone syncs contacts to iCloud or your Mac, those contacts can be part of that backup."],
-          ["Where do they go?", "Into a CSV file on the Mac. CSV is just a table: names, phone numbers, emails, companies, and other fields that can be opened in Numbers, Excel, Google Sheets, or imported elsewhere."],
-          ["Does it change the phone?", "No. It reads the backup and writes a separate file. It does not edit, upload, merge, or delete contacts on the phone."]
-        ],
-        path: "abbu-to-csv/abbu_to_csv.sh"
-      },
-      {
-        id: "personalcontacts-analyzer",
-        name: "Contacts Analyzer",
-        slug: "personalcontacts-analyzer",
-        icon: "📊",
-        category: "contacts",
-        tags: ["gmail", "sqlite", "analysis"],
-        color: "linear-gradient(135deg, #f0c45b, #44d17d)",
-        summary: "Archives Gmail headers locally and builds relationship and activity reports without message bodies.",
-        story: "I like systems that reveal patterns without making a privacy bonfire. This shows the shape of a network while leaving the actual correspondence alone.",
-        path: "personalcontacts-analyzer/"
-      },
-      {
-        id: "pdf-to-xls",
-        name: "PDF to XLS",
-        slug: "pdf-to-xls",
-        icon: "📄",
-        category: "productivity",
-        tags: ["pdf", "excel", "conversion"],
-        color: "linear-gradient(135deg, #ff9f43, #62a8ff)",
-        summary: "Extracts PDF text with poppler and writes a quick Excel workbook for rough table recovery.",
-        story: "Somebody always sends the numbers as a PDF. This is the little bridge from inert document to spreadsheet-shaped thing I can sort, inspect, and use.",
-        path: "pdf-to-xls/pdftoxls.sh"
-      }
-    ];
-
-    const categories = [
-      ["all", "All"],
-      ["storage", "Storage"],
-      ["productivity", "Productivity"],
-      ["contacts", "Contacts"],
-      ["meet", "Meet"],
-      ["migration", "Migration"],
-      ["monitoring", "Monitoring"]
-    ];
+  {
+    "id": "imessage-sync",
+    "name": "iMessage Sync",
+    "slug": "imessage-sync",
+    "icon": "🌙",
+    "category": "storage",
+    "tags": [
+      "mac-tool",
+      "imessage",
+      "backup",
+      "ai-ready",
+      "sqlite",
+      "launchd"
+    ],
+    "color": "linear-gradient(135deg, #3b2f8f, #1f6feb)",
+    "summary": "Every night, your whole iMessage history becomes a folder people and AIs can read: Markdown per person and per day, a searchable database, and photos, videos and PDFs sorted and shrunk.",
+    "story": "Messages hides your conversations in a database no other app can open and quietly offloads old photos. iMessage Sync copies everything out every night and never forgets, even after you clean up Messages. It heals itself: catches up after sleep, retries with backoff, and a doctor command tells you exactly what to fix.",
+    "path": "imessage-sync/",
+    "featured": true,
+    "isNew": true
+  },
+  {
+    "id": "rescue-hq",
+    "name": "Google Photos Space Rescue HQ",
+    "slug": "rescue-hq",
+    "icon": "🛟",
+    "category": "storage",
+    "tags": [
+      "mac-tool",
+      "photos",
+      "google-takeout",
+      "storage",
+      "exiftool"
+    ],
+    "color": "linear-gradient(135deg, #0071e3, #30d158)",
+    "summary": "Merge a Google Takeout zip set, sort it into flat PHOTOS and per-year VIDEOS, and repair what Takeout breaks.",
+    "story": "Getting a child's photo library out of Google is not one problem but five: the download arrives as fifteen 10GB zips, half the videos are Live Photo clips that count against your quota, thousands of files are duplicates, the extensions lie about what the files actually are, and the true capture dates live in sidecars Google ignores on re-upload. This handles all of it in one place, dry-running every stage and deleting nothing.",
+    "path": "rescue-hq/rescue.sh",
+    "featured": true,
+    "isNew": true
+  },
+  {
+    "id": "dadsbot",
+    "name": "DadsBot",
+    "slug": "dadsbot",
+    "icon": "🎙️",
+    "category": "ai",
+    "tags": [
+      "ai",
+      "oral-history",
+      "family",
+      "nextjs",
+      "public-app"
+    ],
+    "color": "linear-gradient(135deg, #f0c45b, #ff6fae)",
+    "summary": "A warm biographer-style interview app for capturing long-form oral histories with recording, transcription, memory primers, and session summaries.",
+    "story": "DadsBot is the family-recording project: one-button capture, automatic speech-to-text, assistant follow-ups, and a memory layer so the next conversation knows what came before.",
+    "path": "https://dadsbot.vercel.app",
+    "repoUrl": "https://github.com/amolsarva/dadsbot",
+    "liveUrl": "https://dadsbot.vercel.app",
+    "getLabel": "Try",
+    "featured": true
+  },
+  {
+    "id": "opensnore",
+    "name": "OpenSnoRE",
+    "slug": "OpenSNORE",
+    "icon": "💤",
+    "category": "web",
+    "tags": [
+      "web-app",
+      "pwa",
+      "audio",
+      "wellness",
+      "joke"
+    ],
+    "color": "linear-gradient(135deg, #44d17d, #55d6c2)",
+    "summary": "A browser app, PWA, and Mac-app experiment with fake snores for boring moments and guided exercises for quieter nights.",
+    "story": "OpenSnoRE started as a ridiculous snore button and grew into a playful sleep-audio lab: procedural snores, boring-situation theater, share loops, and a real stop-snoring side quest.",
+    "path": "https://amolsarva.github.io/OpenSNORE/",
+    "repoUrl": "https://github.com/amolsarva/OpenSNORE",
+    "liveUrl": "https://amolsarva.github.io/OpenSNORE/",
+    "getLabel": "Try",
+    "featured": true
+  },
+  {
+    "id": "opensore",
+    "name": "OpenSore",
+    "slug": "opensore",
+    "icon": "🕵️",
+    "category": "evidence",
+    "tags": [
+      "ai",
+      "legal",
+      "hr",
+      "evidence",
+      "python"
+    ],
+    "color": "linear-gradient(135deg, #62a8ff, #7c3aed)",
+    "summary": "AI-assisted workplace evidence investigation for lawyers, HR, boards, and compliance teams.",
+    "story": "OpenSore turns scattered emails, chats, documents, calendars, notes, and exports into source-backed timelines, contradiction checks, and structured investigation work product.",
+    "path": "https://github.com/amolsarva/opensore",
+    "repoUrl": "https://github.com/amolsarva/opensore",
+    "getLabel": "Repo",
+    "featured": true
+  },
+  {
+    "id": "voicememocleaner",
+    "name": "VOICEMEMOCLEANER",
+    "slug": "voicememocleaner",
+    "icon": "🎙️",
+    "category": "storage",
+    "tags": [
+      "mac-tool",
+      "audio",
+      "export",
+      "sqlite",
+      "metadata"
+    ],
+    "color": "linear-gradient(135deg, #7c3aed, #b99cff)",
+    "summary": "Exports every Voice Memo — original and compressed copies — with title, date, duration, and GPS metadata for analysis and archival.",
+    "story": "Voice Memos pile up and iCloud never makes them easy to actually use. This reads the Voice Memos database directly, drops full-quality and space-saving copies of every recording into one folder, and pulls out whatever GPS/time metadata is embedded so the pile becomes something you can sort, search, and listen back through.",
+    "path": "voicememocleaner/run.sh",
+    "isNew": true
+  },
+  {
+    "id": "imessage-campaigns",
+    "name": "iMessage Campaign Studio",
+    "slug": "imessage-campaigns",
+    "icon": "📣",
+    "category": "productivity",
+    "tags": [
+      "mac-tool",
+      "imessage",
+      "outreach",
+      "python"
+    ],
+    "color": "linear-gradient(135deg, #0ea5e9, #6366f1)",
+    "summary": "Find people by what you've talked about before, review each one, then send separate personal texts, with dry-run first and reply-aware follow-ups.",
+    "story": "Group texts are rude and BCC doesn't exist in Messages. This searches your own history for everyone who, say, came to last year's party, lets you review the list with context, and sends each person their own message.",
+    "path": "imessage-campaigns/",
+    "isNew": true
+  },
+  {
+    "id": "backstage",
+    "name": "Backstage",
+    "slug": "backstage",
+    "icon": "🎛️",
+    "category": "mac-tool",
+    "tags": [
+      "mac-tool",
+      "launchd",
+      "swiftui",
+      "automation"
+    ],
+    "color": "linear-gradient(135deg, #111827, #6b7280)",
+    "summary": "A menu-bar command center for everything running in the background on your Mac: LaunchAgents, cron, your own scripts, with run history and one-click repairs.",
+    "story": "Backstage lists every background job, explains what it does, spots crash loops and missing scripts, and runs your scripts with live output and history.",
+    "path": "backstage/",
+    "isNew": true
+  },
+  {
+    "id": "git-privacy",
+    "name": "git-privacy",
+    "slug": "git-privacy",
+    "icon": "🔏",
+    "category": "mac-tool",
+    "tags": [
+      "mac-tool",
+      "git",
+      "privacy",
+      "icloud"
+    ],
+    "color": "linear-gradient(135deg, #1e293b, #22c55e)",
+    "summary": "Keep code on GitHub and personal notes on your Macs: anything git ignores stays in your iCloud-synced folders and is blocked from ever being pushed.",
+    "story": "If your repos live in iCloud Drive, private notes, contact lists and AI instructions sit right next to public code. git-privacy makes one rule enforceable on every Mac: ignored means private. A pre-push guard blocks leaks, scrub removes private files from not-yet-pushed commits, and audit finds corrupted repositories before they bite.",
+    "path": "git-privacy/",
+    "isNew": true
+  },
+  {
+    "id": "secrets-sweep",
+    "name": "Secrets Sweep",
+    "slug": "secrets-sweep",
+    "icon": "🔐",
+    "category": "mac-tool",
+    "tags": [
+      "mac-tool",
+      "security",
+      "secrets"
+    ],
+    "color": "linear-gradient(135deg, #7f1d1d, #f59e0b)",
+    "summary": "Audits a folder tree for API keys, tokens and credential files that drifted out of your vault, and can move them in.",
+    "story": "Keys end up in .env files, notes and old scripts. This finds them and moves them to one private vault with symlinks so nothing breaks.",
+    "path": "secrets-sweep/secrets-sweep.sh",
+    "isNew": true
+  },
+  {
+    "id": "sunlight",
+    "name": "Sunlight",
+    "slug": "sunlight",
+    "icon": "☀️",
+    "category": "mac-tool",
+    "tags": [
+      "mac-tool",
+      "smart-home",
+      "swiftui",
+      "tasmota"
+    ],
+    "color": "linear-gradient(135deg, #f59e0b, #fde68a)",
+    "summary": "Native Mac controls for a Tasmota smart bulb: moods, slow color compositions, warm start-up and on-device daylight automation. Your bulb's details stay in a private local file.",
+    "story": "Smart-bulb apps want accounts and clouds. Sunlight talks straight to a Tasmota bulb on your Wi-Fi: twelve moods, slow compositions, a warm Edison start-up, and a daylight program that runs on the bulb itself, even with the Mac asleep.",
+    "path": "sunlight/",
+    "isNew": true
+  },
+  {
+    "id": "gmail-attachment-wingman-extension",
+    "name": "Gmail Attachment Wingman",
+    "slug": "gmail-attachment-wingman-extension",
+    "icon": "📎",
+    "category": "productivity",
+    "tags": [
+      "chrome-extension",
+      "gmail"
+    ],
+    "color": "linear-gradient(135deg,#dc2626,#fbbf24)",
+    "summary": "Grabs attachments out of Gmail in bulk so you're not saving them one click at a time.",
+    "story": "",
+    "path": "gmail-attachment-wingman-extension/"
+  },
+  {
+    "id": "google-voice-exporter-extension",
+    "name": "Google Voice Exporter",
+    "slug": "google-voice-exporter-extension",
+    "icon": "☎️",
+    "category": "contacts",
+    "tags": [
+      "mac-tool",
+      "chrome",
+      "contacts",
+      "export"
+    ],
+    "color": "linear-gradient(135deg, #ff6fae, #ff9f43)",
+    "summary": "Exports the open Google Voice thread as JSON, CSV, or TXT with attachment URLs and logs.",
+    "story": "The phone is still where half of real life happens: founders, contractors, school, family, buildings, quick deals. This makes those threads portable before they disappear behind somebody else's interface.",
+    "path": "google-voice-exporter-extension/"
+  },
+  {
+    "id": "meet-tab-sidecar-extension",
+    "name": "Meet Tab Sidecar",
+    "slug": "meet-tab-sidecar-extension",
+    "icon": "M",
+    "category": "productivity",
+    "tags": [
+      "mac-tool",
+      "chrome",
+      "meet",
+      "audio",
+      "presentation"
+    ],
+    "color": "linear-gradient(135deg, #2dd4bf, #2563eb)",
+    "summary": "Chrome extension for joining a Meet while a sidecar tab handles audio, intros, or presentation work.",
+    "story": "Meetings should produce a useful artifact, not just another happening. This lets another tab do the repeatable work while I stay focused on the conversation.",
+    "path": "downloads/meet-tab-sidecar-extension.zip"
+  },
+  {
+    "id": "imessage-cleanup",
+    "name": "iMessage Cleanup",
+    "slug": "imessage-cleanup",
+    "icon": "💬",
+    "category": "storage",
+    "tags": [
+      "mac-tool",
+      "storage",
+      "icloud",
+      "sqlite",
+      "contacts"
+    ],
+    "color": "linear-gradient(135deg, #1f6feb, #7c3aed)",
+    "summary": "Interactive exporter and iCloud storage cleaner: exports per-person archives (database, transcript, media) and frees space by removing local attachment copies.",
+    "story": "Old conversations are decisions, context, favors, family and receipts. Export the people who matter into durable per-person archives, then reclaim the gigabytes Messages hoards. For the nightly all-conversations archive, pair it with iMessage Sync.",
+    "path": "imessage-cleanup/run.sh",
+    "repoUrl": "https://github.com/amolsarva/imessage-cleanup"
+  },
+  {
+    "id": "bigfiles",
+    "name": "Bigfiles",
+    "slug": "bigfiles",
+    "icon": "📦",
+    "category": "storage",
+    "tags": [
+      "mac-tool",
+      "disk",
+      "audit",
+      "archive"
+    ],
+    "color": "linear-gradient(135deg, #f0c45b, #ff705d)",
+    "summary": "Finds heavy folders and checks recent activity before I decide what to archive.",
+    "story": "A Mac accumulates the sediment of every company, course, podcast, trip, and project. Bigfiles is the map before the excavation.",
+    "path": "bigfiles/bigfiles.sh"
+  },
+  {
+    "id": "cleanicloud",
+    "name": "Clean iCloud",
+    "slug": "cleanicloud",
+    "icon": "☁️",
+    "category": "storage",
+    "tags": [
+      "mac-tool",
+      "icloud",
+      "duplicates",
+      "large-files"
+    ],
+    "color": "linear-gradient(135deg, #55d6c2, #2f80ed)",
+    "summary": "Finds iCloud duplicates and suspiciously large clusters, then asks before removing anything.",
+    "story": "The cloud is useful until it becomes a rent-seeking attic. This is for the recurring moment when I want the machine to show me the mess plainly before I clean it.",
+    "path": "cleanicloud/cleanicloud.sh"
+  },
+  {
+    "id": "drive-dedup",
+    "name": "Drive Dedup",
+    "slug": "drive-dedup",
+    "icon": "💿",
+    "category": "storage",
+    "tags": [
+      "mac-tool",
+      "external-drive",
+      "duplicates",
+      "python"
+    ],
+    "color": "linear-gradient(135deg, #b993ff, #62a8ff)",
+    "summary": "Scans external drives for duplicates and plans a clean consolidation with checkpoints.",
+    "story": "Old drives are archaeological sites. The goal is not just delete duplicates; it is recover the useful record without losing the weird valuable thing.",
+    "path": "drive-dedup/"
+  },
+  {
+    "id": "screenshot-tidy",
+    "name": "Screenshot Tidy",
+    "slug": "screenshot-tidy",
+    "icon": "📸",
+    "category": "productivity",
+    "tags": [
+      "mac-tool",
+      "desktop",
+      "launchagent",
+      "screenshots"
+    ],
+    "color": "linear-gradient(135deg, #62a8ff, #55d6c2)",
+    "summary": "Moves screenshots off the Desktop into a real Screenshots folder and keeps the habit alive.",
+    "story": "Screenshots are field notes from the day: a chart, a bug, a building, a founder deck. They should be findable, not sprinkled across the Desktop like confetti.",
+    "path": "screenshot-tidy/"
+  },
+  {
+    "id": "abbu-to-csv",
+    "name": "ABBU to CSV",
+    "slug": "abbu-to-csv",
+    "icon": "📇",
+    "category": "contacts",
+    "tags": [
+      "mac-tool",
+      "contacts",
+      "csv",
+      "backup"
+    ],
+    "color": "linear-gradient(135deg, #44d17d, #62a8ff)",
+    "summary": "Turns an Apple Contacts .abbu backup into a readable CSV by finding the real database inside.",
+    "story": "The network is the work: founders, students, investors, neighbors, builders. Contacts should be inspectable data, not a sealed Apple bundle.",
+    "path": "abbu-to-csv/abbu_to_csv.sh"
+  },
+  {
+    "id": "personalcontacts-analyzer",
+    "name": "Contacts Analyzer",
+    "slug": "personalcontacts-analyzer",
+    "icon": "📊",
+    "category": "contacts",
+    "tags": [
+      "mac-tool",
+      "gmail",
+      "sqlite",
+      "analysis"
+    ],
+    "color": "linear-gradient(135deg, #f0c45b, #44d17d)",
+    "summary": "Archives Gmail headers locally and builds relationship and activity reports without message bodies.",
+    "story": "I like systems that reveal patterns without making a privacy bonfire. This shows the shape of a network while leaving the actual correspondence alone.",
+    "path": "personalcontacts-analyzer/"
+  },
+  {
+    "id": "pdf-to-xls",
+    "name": "PDF to XLS",
+    "slug": "pdf-to-xls",
+    "icon": "📄",
+    "category": "productivity",
+    "tags": [
+      "mac-tool",
+      "pdf",
+      "excel",
+      "conversion"
+    ],
+    "color": "linear-gradient(135deg, #ff9f43, #62a8ff)",
+    "summary": "Extracts PDF text with poppler and writes a quick Excel workbook for rough table recovery.",
+    "story": "Somebody always sends the numbers as a PDF. This is the little bridge from inert document to spreadsheet-shaped thing I can sort, inspect, and use.",
+    "path": "pdf-to-xls/pdftoxls.sh"
+  },
+  {
+    "id": "whatsapp-campaigns",
+    "name": "WhatsApp Campaign Studio",
+    "slug": "whatsapp-campaigns",
+    "icon": "🟢",
+    "category": "productivity",
+    "tags": [
+      "mac-tool",
+      "whatsapp",
+      "outreach",
+      "node"
+    ],
+    "color": "linear-gradient(135deg, #16a34a, #86efac)",
+    "summary": "The same careful, one-by-one outreach for WhatsApp: search history, review context, simulate or send, and bump people who didn't reply.",
+    "story": "",
+    "path": "whatsapp-campaigns/"
+  },
+  {
+    "id": "cpu-guard",
+    "name": "CPU Guard",
+    "slug": "cpu-guard",
+    "icon": "🔥",
+    "category": "monitoring",
+    "tags": [
+      "mac-tool",
+      "cpu",
+      "watchdog",
+      "python"
+    ],
+    "color": "linear-gradient(135deg, #ff705d, #b993ff)",
+    "summary": "Stops known noisy macOS background processes after sustained high CPU, with quiet action-only notifications.",
+    "story": "My computer should spend cycles on writing, calls, code, and research, not an invisible daemon melting the fan. This is a small guardrail for flow.",
+    "path": "cpu-guard/cpu_guard.py"
+  },
+  {
+    "id": "github-autopush",
+    "name": "GitHub Autopush",
+    "slug": "github-autopush",
+    "icon": "↻",
+    "category": "productivity",
+    "tags": [
+      "mac-tool",
+      "git",
+      "launchagent",
+      "sync"
+    ],
+    "color": "linear-gradient(135deg, #44d17d, #1f9a6a)",
+    "summary": "Keeps local repos moving to GitHub with readable commits and a background LaunchAgent.",
+    "story": "Ship While You Sleep, but for the pile of local experiments. I make a lot of small things; this keeps the good ones from living only on one laptop.",
+    "path": "github-autopush/"
+  },
+  {
+    "id": "mac-migrator",
+    "name": "Mac Migrator",
+    "slug": "mac-migrator",
+    "icon": "🖥️",
+    "category": "migration",
+    "tags": [
+      "mac-tool",
+      "migration",
+      "launchagents",
+      "dotfiles"
+    ],
+    "color": "linear-gradient(135deg, #cbd5e1, #64748b)",
+    "summary": "Bundles LaunchAgents, shell config, automation folders, brew lists, diagnostics, and restore steps.",
+    "story": "I have rebuilt the same working environment across too many machines. This turns a Mac migration from oral tradition into an actual written system.",
+    "path": "mac-migrator/mac_background_migrator.sh"
+  },
+  {
+    "id": "mac-scripts-launcher",
+    "name": "Mac Scripts Launcher",
+    "slug": "mac-scripts-launcher",
+    "icon": "🚀",
+    "category": "mac-tool",
+    "tags": [
+      "mac-tool",
+      "launcher"
+    ],
+    "color": "linear-gradient(135deg,#0f766e,#5eead4)",
+    "summary": "A native-feeling little app to browse and launch everything in this collection from one window.",
+    "story": "",
+    "path": "mac-scripts-launcher/"
+  }
+];
+    const categories = [["all", "All"], ["ai", "AI"], ["web", "Web"], ["evidence", "Evidence"], ["mac-tool", "Mac Tools"], ["productivity", "Productivity"], ["storage", "Storage"], ["contacts", "Contacts"], ["migration", "Migration"]];
+    // catalog:end
 
     const repo = "https://github.com/amolsarva/amols-app-store";
     let activeCategory = "all";
@@ -898,15 +1263,20 @@
     const count = document.getElementById("result-count");
 
     function readmeUrl(app) {
-      if (app.slug === "meet-tab-sidecar-extension") return `${repo}/tree/main/meet-tab-sidecar-extension`;
+      if (app.repoUrl) return app.repoUrl;
       return `${repo}/tree/main/${app.slug}`;
     }
 
     function getUrl(app) {
+      if (app.liveUrl) return app.liveUrl;
+      if (app.repoUrl) return app.repoUrl;
       if (app.path.startsWith("downloads/")) return app.path;
       if (app.path.endsWith("/")) return `${repo}/tree/main/${app.slug}`;
       return `https://raw.githubusercontent.com/amolsarva/amols-app-store/main/${app.path}`;
     }
+
+    document.getElementById("stat-apps").textContent = apps.length;
+    document.getElementById("stat-featured").textContent = apps.filter(app => app.featured).length;
 
     function renderFilters() {
       filters.innerHTML = categories.map(([id, label]) => (
@@ -925,27 +1295,9 @@
     }
 
     function appMatches(app, query) {
-      const detailText = (app.details || []).flat().join(" ");
-      const haystack = [app.name, app.slug, app.category, app.summary, app.story || "", detailText, ...app.tags].join(" ").toLowerCase();
+      const haystack = [app.name, app.slug, app.category, app.summary, app.story || "", ...app.tags].join(" ").toLowerCase();
       const categoryOk = activeCategory === "all" || app.category === activeCategory || app.tags.includes(activeCategory);
       return categoryOk && haystack.includes(query);
-    }
-
-    function renderDetails(app) {
-      if (!app.details) return "";
-      return `
-        <details class="explain">
-          <summary>How it works</summary>
-          <div class="explain-body">
-            ${app.details.map(([question, answer]) => `
-              <div class="explain-item">
-                <strong>${question}</strong>
-                <p>${answer}</p>
-              </div>
-            `).join("")}
-          </div>
-        </details>
-      `;
     }
 
     function renderApps() {
@@ -958,16 +1310,15 @@
           <div class="app-top">
             <div class="icon" style="--icon-bg:${app.color}">${app.icon}</div>
             <div class="app-title">
-              <h3>${app.name}</h3>
+              <h3>${app.name}${app.isNew ? ' <span class="new-badge">New</span>' : ""}</h3>
               <span>${app.slug}</span>
             </div>
           </div>
           <p class="summary">${app.summary}</p>
           <p class="story">${app.story}</p>
-          ${renderDetails(app)}
           <div class="chips">${app.tags.map(tag => `<span class="chip">${tag}</span>`).join("")}</div>
           <div class="card-actions">
-            <a class="mini-btn get" href="${getUrl(app)}">Get</a>
+            <a class="mini-btn get" href="${getUrl(app)}">${app.getLabel || "Get"}</a>
             <a class="mini-btn" href="${readmeUrl(app)}" target="_blank" rel="noopener">Details</a>
           </div>
         </article>
