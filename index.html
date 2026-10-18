@@ -9,6 +9,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css?v=20260511-mac-scripts" />
+  <style>
+    .blog-header { display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:1rem; }
+    .blog-header .section-subtitle { flex:1 1 22rem; margin:0; }
+    .writing-subhead { margin:1.25rem 0 .75rem; font-size:1rem; letter-spacing:.08em; text-transform:uppercase; opacity:.7; }
+    .writing-grid--more { margin-top:1.5rem; }
+    #blog .media-card__image { object-fit:cover; object-position:top; background:var(--color-border); aspect-ratio:16/9; height:auto; }
+    .bio-block { background:var(--color-surface); border:1px solid var(--color-border); border-radius:var(--radius-medium); padding:1.25rem 1.5rem; margin:1rem 0; }
+    .bio-block__head { display:flex; justify-content:space-between; align-items:center; gap:1rem; margin-bottom:.5rem; }
+    .bio-block__head h3 { margin:0; font-size:1rem; }
+    .bio-block__count { font-weight:400; color:var(--color-text-secondary); font-size:.85rem; margin-left:.4rem; }
+    .bio-copy { font:inherit; font-size:.85rem; padding:.35rem .9rem; border-radius:999px; border:1px solid var(--color-accent); background:transparent; color:var(--color-accent); cursor:pointer; }
+    .bio-copy:hover, .bio-copy.is-copied { background:var(--color-accent); color:#fff; }
+    .link-preview { position:fixed; z-index:1000; width:280px; pointer-events:none; border-radius:var(--radius-small); overflow:hidden; box-shadow:0 12px 32px var(--color-shadow), 0 0 0 1px var(--color-border); background:var(--color-surface-strong); opacity:0; transform:translateY(4px); transition:opacity var(--transition-base), transform var(--transition-base); }
+    .link-preview.is-visible { opacity:1; transform:none; }
+    .link-preview img { display:block; width:100%; aspect-ratio:16/10; object-fit:cover; object-position:top; background:var(--color-border); }
+    .link-preview span { display:block; padding:.45rem .7rem; font-size:.75rem; color:var(--color-text-secondary); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    @media (hover:none) { .link-preview { display:none; } }
+  </style>
 </head>
 <body>
   <div class="site" id="top">
@@ -22,13 +40,14 @@
         </button>
         <nav class="site-nav" id="primary-navigation">
           <ul>
-            <li><a href="#start-here">Start Here</a></li>
-            <li><a href="#writing">Writing</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#writing">Writings</a></li>
             <li><a href="#ventures">Ventures</a></li>
             <li><a href="#teaching">Teaching</a></li>
             <li><a href="#podcasts">Conversations</a></li>
             <li><a href="#books">Books &amp; Essays</a></li>
             <li><a href="#adventures">Adventures</a></li>
+            <li><a href="#bio">Bio</a></li>
           </ul>
         </nav>
       </div>
@@ -43,7 +62,7 @@
             <p class="intro">I build companies, back founders, teach venture, and write about technology, biology, cities, and making new things people like.</p>
             <p class="lead">Stanford PhD. Columbia professor.</p>
             <div class="hero__actions">
-              <a class="button" href="#start-here">Start here</a>
+              <a class="button" href="https://amol.sarva.co">Read my blog &rarr;</a>
               <a class="button button--ghost" href="https://www.amolsarva.com/email.html">Newsletter &amp; contact</a>
             </div>
           </div>
@@ -57,14 +76,14 @@
       <section class="section section--nav section--layered" aria-labelledby="section-navigation">
         <div class="container">
           <h2 id="section-navigation" class="section-title">The site</h2>
-          <p class="section-subtitle">This is a home for biography, writing, ventures, teaching, conversations, and longer work.</p>
+          <p class="section-subtitle">This is a home for the blog, writing, ventures, teaching, conversations, and longer work.</p>
           <div class="card-grid card-grid--nav">
-            <a class="card card--nav" href="#start-here">
-              <h3>Start Here</h3>
-              <p>A fuller biography, with the longer arc behind the work.</p>
+            <a class="card card--nav" href="#blog">
+              <h3>Blog</h3>
+              <p>Essays, notes, research &mdash; updated a few times a month.</p>
             </a>
             <a class="card card--nav" href="#writing">
-              <h3>Writing</h3>
+              <h3>Writings</h3>
               <p>Essays, notes, and research on building, technology, policy, design, and public life.</p>
             </a>
             <a class="card card--nav" href="#ventures">
@@ -123,21 +142,60 @@
         </div>
       </section>
 
-      <section class="section section--start section--layered" id="start-here" aria-labelledby="start-title">
-        <div class="container container--narrow">
-          <h2 id="start-title" class="section-title">Start here</h2>
-          <p class="section-intro">I've spent my career across company-building, investing, teaching, and writing. The common thread is an interest in systems: how they are built, how they fail, and how they change people's lives.</p>
-          <details class="longform">
-            <summary class="longform__summary">Read the full biography</summary>
-            <div class="longform__content">
-              <p>Amol Sarva is an entrepreneur, investor, and teacher.</p>
-              <p>He co-founded <a href="http://lifex.vc">LifeX Ventures</a> in 2022, a venture firm focused on software-driven science and longevity. He also created <a href="http://www.popularchange.com">Popular Change</a>, a company builder behind ventures including <a href="http://www.aikito.co">Aikito</a>, <a href="http://www.cornerup.com">CornerUP</a>, <a href="http://www.ratio21.com">Ratio21</a>, and <a href="http://www.dinara.com">Dinara</a>.</p>
-              <p>He co-founded <a href="http://www.knotel.com">Knotel</a> in 2016 and helped build it into one of the world's largest flexible office businesses before its acquisition by Newmark in 2021. Earlier, he helped develop <a href="http://www.haloneuro.com">Halo Neuroscience</a>, a neurostimulation company later acquired by Flow Neuroscience, and founded <a href="http://www.knote.com">Knotable</a>, a collaborative notes platform backed by Bloomberg Beta and 500 Startups.</p>
-              <p>His earlier work includes founding <a href="https://web.archive.org/web/20090303060114/https://www.wired.com/gadgets/gadgetreviews/multimedia/2008/11/pr_10best">Peek</a>, an award-winning mobile device company; serving on the founding team of <a href="http://www.virginmobileusa.com">Virgin Mobile USA</a>; and working on wireless and telecom ventures at a moment when mobile still felt like the frontier. He has also advised startups across manufacturing, payments, labor, gaming, and communications.</p>
-              <p>Beyond operating, he has backed startups through his family angel fund and has been involved with roughly fifty early-stage companies. He teaches at Columbia, where he works with students on ventures, ideas, and the messy process of building something real.</p>
-              <p>He holds a PhD from Stanford and a BA from Columbia. Outside the usual categories, he has built a noted residential project in Long Island City, run a neighborhood blog, recorded long-form conversations with founders and thinkers, and published writing across technology, business, and culture.</p>
-            </div>
-          </details>
+      <section class="section section--currently section--layered" id="blog" aria-labelledby="blog-title">
+        <div class="container">
+          <div class="section-header blog-header">
+            <h2 id="blog-title" class="section-title">Blog</h2>
+            <p class="section-subtitle">Notes on longevity, health systems, venture, and whatever else won’t leave me alone. Posting since 1998.</p>
+            <a class="button" href="https://amol.sarva.co">Go to the blog</a>
+          </div>
+          <div class="card-grid card-grid--currently">
+            <article class="card card--soft media-card">
+              <a class="media-card__body" href="https://amol.sarva.co/ten-saved-minutes-can-i-replace-workers-or-just-work/">
+                <img class="media-card__image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Famol.sarva.co%2Ften-saved-minutes-can-i-replace-workers-or-just-work%2F?w=800&h=450" alt="" loading="lazy" width="400" height="225">
+                <h3 class="media-card__title">Ten Saved Minutes: can I ‘replace’ workers or just work?</h3>
+                <p>A sensitivity model for AI in the health workforce—and the uncomfortable thing it says.</p>
+                <p class="media-card__meta">amol.sarva.co &middot; Aug 2026</p>
+                <span class="media-card__cta">Read post</span>
+              </a>
+            </article>
+            <article class="card card--soft media-card">
+              <a class="media-card__body" href="https://amol.sarva.co/lifex-at-mckinsey-why-metabolic-health-is-becoming-the-next-great-technology-platform/">
+                <img class="media-card__image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Famol.sarva.co%2Flifex-at-mckinsey-why-metabolic-health-is-becoming-the-next-great-technology-platform%2F?w=800&h=450" alt="" loading="lazy" width="400" height="225">
+                <h3 class="media-card__title">LifeX at McKinsey: Why Metabolic Health Is the Next Great Technology Platform</h3>
+                <p>GLP-1s aren’t the iPhone of metabolic health. They’re the modem.</p>
+                <p class="media-card__meta">amol.sarva.co &middot; Jul 2026</p>
+                <span class="media-card__cta">Read post</span>
+              </a>
+            </article>
+            <article class="card card--soft media-card">
+              <a class="media-card__body" href="https://amol.sarva.co/strong-like-bull-the-benefits-of-getting-tested-before-something-breaks/">
+                <img class="media-card__image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Famol.sarva.co%2Fstrong-like-bull-the-benefits-of-getting-tested-before-something-breaks%2F?w=800&h=450" alt="" loading="lazy" width="400" height="225">
+                <h3 class="media-card__title">Strong Like Bull: Get Testosterone-Tested Before Something Breaks</h3>
+                <p>High-normal for a man, adjacent to breeding bulls—and why baseline testing matters.</p>
+                <p class="media-card__meta">amol.sarva.co &middot; Jul 2026</p>
+                <span class="media-card__cta">Read post</span>
+              </a>
+            </article>
+            <article class="card card--soft media-card">
+              <a class="media-card__body" href="https://amol.sarva.co/the-top-relationships-project/">
+                <img class="media-card__image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Famol.sarva.co%2Fthe-top-relationships-project%2F?w=800&h=450" alt="" loading="lazy" width="400" height="225">
+                <h3 class="media-card__title">The Top Relationships Project</h3>
+                <p>Who are my deepest relationships, measured by the long arc of contact rather than memory?</p>
+                <p class="media-card__meta">amol.sarva.co &middot; Jul 2026</p>
+                <span class="media-card__cta">Read post</span>
+              </a>
+            </article>
+            <article class="card card--soft media-card">
+              <a class="media-card__body" href="https://amol.sarva.co/fake-stars-in-github-projects-research-note-2-x-re-vincent-hus-and-opensre/">
+                <img class="media-card__image" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Famol.sarva.co%2Ffake-stars-in-github-projects-research-note-2-x-re-vincent-hus-and-opensre%2F?w=800&h=450" alt="" loading="lazy" width="400" height="225">
+                <h3 class="media-card__title">Fake stars in GitHub projects</h3>
+                <p>A diligence deep-dive into inflated open-source traction.</p>
+                <p class="media-card__meta">amol.sarva.co &middot; Jul 2026</p>
+                <span class="media-card__cta">Read post</span>
+              </a>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -174,15 +232,10 @@
 
       <section class="section section--data section--layered" id="writing" aria-labelledby="writing-title">
         <div class="container">
-          <h2 id="writing-title" class="section-title">Amol&rsquo;s Blog</h2>
+          <h2 id="writing-title" class="section-title">Writings</h2>
           <p class="section-intro">Writing has been a parallel practice throughout: essays, notes, research, guides, and the occasional archival rabbit hole.</p>
+          <h3 class="writing-subhead">Published elsewhere</h3>
           <div class="card-grid writing-grid">
-            <article class="stack-card writing-feature card--tone-amber">
-              <p class="card__kicker">Personal notebook</p>
-              <h3><a href="https://amol.sarva.co">amol.sarva.co</a></h3>
-              <p>Ongoing writing, experiments, fragments, and field notes.</p>
-              <a class="button writing-feature__button" href="https://amol.sarva.co">Read the notebook</a>
-            </article>
             <article class="stack-card card--tone-mist">
               <h3>Selected writings</h3>
               <p>My writing has appeared in Fortune, Salon, BusinessWeek, Strategy &amp; Business, Huffington Post, Alley Insider, and elsewhere.</p>
@@ -202,6 +255,8 @@
                 <li><a href="shipv2201811.pdf">Ship v2</a> &mdash; a practical culture document on how teams actually ship work.</li>
               </ul>
             </article>
+          </div>
+          <div class="card-grid writing-grid writing-grid--more">
             <article class="stack-card card--tone-fern">
               <h3>Notes &amp; archives</h3>
               <ul>
@@ -446,6 +501,34 @@
           </div>
         </div>
       </section>
+
+      <section class="section section--start section--layered" id="bio" aria-labelledby="bio-title">
+        <div class="container container--narrow">
+          <h2 id="bio-title" class="section-title">Bio</h2>
+          <p class="section-intro">For event organizers and press: copy whichever length fits, and grab the <a href="amolprofilelinkedin.jpeg" download>high-resolution headshot</a>.</p>
+          <div class="bio-block">
+            <div class="bio-block__head"><h3>Short bio <span class="bio-block__count">~50 words</span></h3><button class="bio-copy" type="button" data-target="bio-short">Copy</button></div>
+            <p id="bio-short">Amol Sarva is founder and managing partner of LifeX Ventures, a venture firm investing in software-driven science and longevity. He co-founded Knotel, Peek and Halo Neuroscience, was on the founding team of Virgin Mobile USA, teaches venture at Columbia, and holds a PhD in cognitive science from Stanford.</p>
+          </div>
+          <div class="bio-block">
+            <div class="bio-block__head"><h3>Medium bio <span class="bio-block__count">~120 words</span></h3><button class="bio-copy" type="button" data-target="bio-medium">Copy</button></div>
+            <p id="bio-medium">Amol Sarva is an entrepreneur, investor, and teacher. He is founder and managing partner of LifeX Ventures, a venture firm focused on software-driven science and longevity, and created Popular Change, a company builder. He co-founded Knotel, which grew into one of the world’s largest flexible-office businesses before its acquisition by Newmark in 2021, and earlier founded Peek, helped develop Halo Neuroscience, and was on the founding team of Virgin Mobile USA. He has backed roughly fifty early-stage companies, teaches venture at Columbia, and co-leads Health 2035, a research initiative with the McKinsey Health Institute and Columbia University. He holds a PhD in cognitive science from Stanford and a BA from Columbia.</p>
+          </div>
+          <details class="longform bio-block">
+            <summary class="longform__summary">Long bio</summary>
+            <div class="bio-block__head"><span></span><button class="bio-copy" type="button" data-target="bio-long">Copy</button></div>
+            <div class="longform__content" id="bio-long">
+              <p>Amol Sarva is an entrepreneur, investor, and teacher.</p>
+              <p>He co-founded <a href="http://lifex.vc">LifeX Ventures</a> in 2022, a venture firm focused on software-driven science and longevity. He also created <a href="http://www.popularchange.com">Popular Change</a>, a company builder behind ventures including <a href="http://www.aikito.co">Aikito</a>, <a href="http://www.cornerup.com">CornerUP</a>, <a href="http://www.ratio21.com">Ratio21</a>, and <a href="http://www.dinara.com">Dinara</a>.</p>
+              <p>He co-founded <a href="http://www.knotel.com">Knotel</a> in 2016 and helped build it into one of the world's largest flexible office businesses before its acquisition by Newmark in 2021. Earlier, he helped develop <a href="http://www.haloneuro.com">Halo Neuroscience</a>, a neurostimulation company later acquired by Flow Neuroscience, and founded <a href="http://www.knote.com">Knotable</a>, a collaborative notes platform backed by Bloomberg Beta and 500 Startups.</p>
+              <p>His earlier work includes founding <a href="https://web.archive.org/web/20090303060114/https://www.wired.com/gadgets/gadgetreviews/multimedia/2008/11/pr_10best">Peek</a>, an award-winning mobile device company; serving on the founding team of <a href="http://www.virginmobileusa.com">Virgin Mobile USA</a>; and working on wireless and telecom ventures at a moment when mobile still felt like the frontier. He has also advised startups across manufacturing, payments, labor, gaming, and communications.</p>
+              <p>Beyond operating, he has backed startups through his family angel fund and has been involved with roughly fifty early-stage companies. He teaches at Columbia, where he works with students on ventures, ideas, and the messy process of building something real.</p>
+              <p>He holds a PhD from Stanford and a BA from Columbia. Outside the usual categories, he has built a noted residential project in Long Island City, run a neighborhood blog, recorded long-form conversations with founders and thinkers, and published writing across technology, business, and culture.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
     </main>
 
     <footer class="site-footer" aria-labelledby="footer-title">
@@ -516,6 +599,101 @@
         }
       });
     }
+
+    // Copy buttons for bios
+    document.querySelectorAll('.bio-copy').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const el = document.getElementById(btn.dataset.target);
+        const text = el.innerText.trim();
+        try { await navigator.clipboard.writeText(text); } catch (e) {
+          const r = document.createRange(); r.selectNodeContents(el);
+          const s = getSelection(); s.removeAllRanges(); s.addRange(r); document.execCommand('copy');
+        }
+        btn.textContent = 'Copied'; btn.classList.add('is-copied');
+        setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('is-copied'); }, 1600);
+      });
+    });
+
+    // Hover thumbshot previews for outbound links (desktop only)
+    (() => {
+      if (!matchMedia('(hover:hover)').matches) return;
+      const box = document.createElement('div');
+      box.className = 'link-preview';
+      box.innerHTML = '<img alt=""><span></span>';
+      document.body.appendChild(box);
+      const img = box.querySelector('img'), cap = box.querySelector('span');
+      const shot = (u) => 'https://s.wordpress.com/mshots/v1/' + encodeURIComponent(u) + '?w=560&h=350';
+      document.querySelectorAll('main a[href], footer a[href]').forEach((a) => {
+        let url; try { url = new URL(a.getAttribute('href'), location.href); } catch (e) { return; }
+        if (!/^https?:$/.test(url.protocol) || url.hash && url.pathname === location.pathname) return;
+        if (a.closest('.media-card') || a.querySelector('img')) return;
+        if (/\.(pdf|jpe?g|png)$/i.test(url.pathname)) return;
+        a.addEventListener('mouseenter', () => {
+          img.src = shot(url.href); cap.textContent = url.hostname.replace(/^www\./, '') + url.pathname.replace(/\/$/, '');
+          const r = a.getBoundingClientRect();
+          const top = r.bottom + 190 > innerHeight ? r.top - 200 : r.bottom + 8;
+          box.style.top = Math.max(8, top) + 'px';
+          box.style.left = Math.min(innerWidth - 292, Math.max(8, r.left)) + 'px';
+          box.classList.add('is-visible');
+        });
+        a.addEventListener('mouseleave', () => box.classList.remove('is-visible'));
+      });
+    })();
   </script>
+<!-- Amol floating nav — paste before </body> on amolsarva.com.
+     On WordPress (amol.sarva.co): CSS → Appearance › Customize › Additional CSS;
+     HTML+JS → a Custom HTML widget or footer-scripts plugin. Auto-detects which site it's on. -->
+<style>
+.anav{position:fixed;left:50%;bottom:max(18px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:9999;
+  font:500 14px/1.2 Georgia,"Times New Roman",serif;color:#1d1d1b}
+.anav-pill{display:flex;align-items:center;gap:.55em;padding:.7em 1.1em;border:1px solid rgba(0,0,0,.14);
+  border-radius:999px;background:rgba(252,250,245,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  box-shadow:0 6px 24px rgba(0,0,0,.12);cursor:pointer;white-space:nowrap}
+.anav-dot{width:8px;height:8px;border-radius:50%;background:#b5462e}
+.anav-here{font-variant:small-caps;letter-spacing:.06em;opacity:.65}
+.anav-caret{transition:transform .2s;opacity:.6}
+.anav.open .anav-caret{transform:rotate(180deg)}
+.anav-menu{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translate(-50%,6px);min-width:220px;
+  padding:.4em;border-radius:14px;background:#fcfaf5;border:1px solid rgba(0,0,0,.12);box-shadow:0 10px 30px rgba(0,0,0,.15);
+  opacity:0;pointer-events:none;transition:.18s}
+.anav.open .anav-menu{opacity:1;pointer-events:auto;transform:translate(-50%,0)}
+.anav-menu a{display:block;padding:.65em .9em;border-radius:9px;color:inherit;text-decoration:none}
+.anav-menu a:hover{background:rgba(181,70,46,.08)}
+.anav-menu a b{display:block;font-weight:600}
+.anav-menu a span{font-size:12px;opacity:.6}
+@media (prefers-color-scheme:dark){
+  .anav{color:#f1ede4}.anav-pill,.anav-menu{background:rgba(30,29,27,.92);border-color:rgba(255,255,255,.15)}
+}
+</style>
+
+<nav class="anav" id="anav" aria-label="Site navigation">
+  <div class="anav-menu" id="anav-menu"></div>
+  <button class="anav-pill" id="anav-pill" aria-expanded="false">
+    <span class="anav-dot"></span>
+    <span><span class="anav-here">you're on</span> <strong id="anav-where"></strong></span>
+    <span class="anav-caret">▴</span>
+  </button>
+</nav>
+
+<script>
+(function(){
+  var onBlog = /(^|\.)amol\.sarva\.co$/.test(location.hostname);
+  var links = onBlog ? [
+    ["https://amolsarva.com","Amol’s homepage","Bio, ventures, teaching, everything"],
+    ["https://amol.sarva.co/newsletter/","Newsletter","Get new posts by email"],
+    ["http://lifex.vc","LifeX Ventures","Longevity & software-driven science"]
+  ] : [
+    ["https://amol.sarva.co","Amol’s blog","New posts a few times a month →"],
+    ["https://amol.sarva.co/newsletter/","Newsletter","Get new posts by email"],
+    ["http://lifex.vc","LifeX Ventures","Longevity & software-driven science"]
+  ];
+  document.getElementById("anav-where").textContent = onBlog ? "Amol’s Blog" : "Amol’s Homepage";
+  document.getElementById("anav-menu").innerHTML = links.map(function(l){
+    return '<a href="'+l[0]+'"><b>'+l[1]+'</b><span>'+l[2]+'</span></a>';}).join("");
+  var nav=document.getElementById("anav"), pill=document.getElementById("anav-pill");
+  pill.onclick=function(e){e.stopPropagation();var o=nav.classList.toggle("open");pill.setAttribute("aria-expanded",o);};
+  document.addEventListener("click",function(){nav.classList.remove("open");pill.setAttribute("aria-expanded",false);});
+})();
+</script>
 </body>
 </html>
